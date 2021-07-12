@@ -5,8 +5,8 @@ import Main from './Main'
 function App() {
   return (
     <div>
-      <Nav />
-      <Main />
+        <Nav />
+        <Main />
     </div>
   );
 }

@@ -9,19 +9,19 @@ const Main = () => {
                     <h4>We are formed based on the philosophy of finding, preserving and spreading original flavors to everyone.</h4>
                 </div>
                 <div>
-                    <h3>Japanese Street Food Specalists </h3>
+                    <h2>Japanese Street Food Specalists </h2>
                     <h4>We are formed based on the philosophy of finding, preserving and spreading original flavors to everyone.</h4>
                 </div>
                 <div>
-                    <h2>Family Run</h2>
+                    <h3>Family Run</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
                 <div>
-                    <h2>Authentic</h2>
+                    <h3>Authentic</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
                 <div>
-                    <h2>Cozy</h2>
+                    <h3>Cozy</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
             </div>
