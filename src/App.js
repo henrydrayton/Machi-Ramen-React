@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <h2>Machi Ramen</h2>
+        <h4>We are formed based on the philosophy of finding, preserving and spreading original flavors to everyone.</h4>
+      </div>
+      <div>
+        <h3>Japanese Street Food Specalists </h3>
+        <h4>We are formed based on the philosophy of finding, preserving and spreading original flavors to everyone.</h4>
+      </div>
+      <div>
+        <h2>Family Run</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      </div>
+      <div>
+        <h2>Authentic</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      </div>
+      <div>
+        <h2>Cozy</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      </div>
     </div>
   );
 }
