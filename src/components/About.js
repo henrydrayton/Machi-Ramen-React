@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from './Nav'
 import Second from './Second';
 
-function App() {
+function About() {
     return (
       <div>
         <Nav />
@@ -10,4 +10,11 @@ function App() {
     );
   }
 
+// const About = () => {
+//   return(
+//       <h1>HomeHome</h1>
+//   )
+// }
   export default About;
+
+
