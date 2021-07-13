@@ -1,12 +1,12 @@
 import React from 'react'
 
 
-function About() {
+function LogIn() {
     return (
         <div>
-            <h1>About</h1>
+            <h1>Log In</h1>
         </div>
     );
 }
 
-export default About;
+export default LogIn;
