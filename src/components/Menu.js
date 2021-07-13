@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 
-
 function Menu() {
     useEffect(() => {
         fetchItems();
@@ -11,7 +10,7 @@ function Menu() {
 // input rails api here
     const fetchItems = async () => {
         const data = await fetch(
-            ' https://pokeapi.co/api/v2/pokemon/ditto/get'
+            'https://fortnite-api.theapinetwork.com/prod09/upcoming/get'
         );
 
         const items = await data.json();        
@@ -22,7 +21,7 @@ function Menu() {
     return (
         <div>
             {items.map(item => (
-                <h1>{item.name}</h1>
+                <h1 key={item.itemid}>{item.name}</h1>
             ))}
             <h1>Menu</h1>
         </div>
