@@ -5,23 +5,31 @@ import Home from './Home'
 import Menu from './Menu'
 import Contact from './Contact'
 import LogIn from './LogIn'
+import Footer from './Footer'
 import '../App.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <Router> 
-      <div className="App">
-          <Navv />
-          <Switch>
-            <Route path="/home" component={Home}/>
-            <Route path="/About" component={About} />
-            <Route path="/Menu" component={Menu} />
-            <Route path="/Contact" component={Contact} />
-            <Route path="/LogIn" component={LogIn} />
-          </Switch>
+    <div className="page-container">
+      <div className="content-wrap">
+        <Router> 
+          <div className="App">
+              <Navv />
+              <Switch>
+                <Route path="/home" component={Home}/>
+                <Route path="/About" component={About} />
+                <Route path="/Menu" component={Menu} />
+                <Route path="/Contact" component={Contact} />
+                <Route path="/LogIn" component={LogIn} />
+              </Switch>
+          </div>
+        </Router>
+        <div>
+        < Footer />
+        </div>
       </div>
-    </Router>
+    </div>
   );
 }
 
