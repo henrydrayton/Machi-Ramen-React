@@ -1,6 +1,7 @@
 import React from 'react'
 import Navv from './Navv'
 import About from './About'
+import Home from './Home'
 import Menu from './Menu'
 import Contact from './Contact'
 import LogIn from './LogIn'
@@ -13,7 +14,7 @@ function App() {
       <div className="App">
           <Navv />
           <Switch>
-            <Route path="/" exact component={Home}/>
+            <Route path="/home" component={Home}/>
             <Route path="/About" component={About} />
             <Route path="/Menu" component={Menu} />
             <Route path="/Contact" component={Contact} />
@@ -24,10 +25,11 @@ function App() {
   );
 }
 
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-)
+// const Home = () => (
+//   <div>
+//     <h1>Home Page</h1>
+//   </div>
+// )
+
 
 export default App;
