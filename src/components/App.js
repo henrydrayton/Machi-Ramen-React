@@ -25,10 +25,8 @@ function App() {
               </Switch>
           </div>
         </Router>
-        <div>
-        < Footer />
         </div>
-      </div>
+      < Footer />
     </div>
   );
 }
