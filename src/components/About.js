@@ -6,6 +6,7 @@ function About() {
     return (
         <div>
             <img src="/images/about.png" alt="about image" class="about"/>
+            <div className="vl"></div>
             <div className="origin">
                 <h3>Our Origins</h3>
                 <p>In Japanese, Machi Ramen means street Ramen. Machi Ramen took inspiration from Japanese street
@@ -36,6 +37,7 @@ function About() {
                     working and experiencing everything that life has to offer.
                 </h4>
             </div>
+            
         </div>
     );
 }
