@@ -14,14 +14,16 @@ function About() {
                      them at the most reasonable price. 
                 </p>
             </div>
-            <div className="authentic">
-                <h3>Authentic Food</h3>
-                <p>We proudly offer our customers everything hand-made: we make our noodles, our broth, 
-                    our Chasyu pork and everything else daily, and from scratch. When customers take a seat
-                     at our restaurant, they can rest assured that we are offering them the food that we make
-                      with our hands, with our utmost care and our gratitude towards them choosing us among 
-                      various choices they have at hand.
-                </p>
+            <div className="authentic-box">
+                <div className="authentic">
+                    <h3>Authentic Food</h3>
+                    <p>We proudly offer our customers everything hand-made: we make our noodles, our broth, 
+                        our Chasyu pork and everything else daily, and from scratch. When customers take a seat
+                        at our restaurant, they can rest assured that we are offering them the food that we make
+                        with our hands, with our utmost care and our gratitude towards them choosing us among 
+                        various choices they have at hand.
+                    </p>
+                </div>
             </div>
             <div className="origin">
                 <h3>Culture</h3>
