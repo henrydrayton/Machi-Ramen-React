@@ -9,7 +9,7 @@ function Footer() {
           {/* Column1 */}
           <div className="col">
             <h5 className="list-unstyled">
-                <h4>MACHI RAMEN</h4>
+                <h4 className="list-unstyled">MACHI RAMEN</h4>
               <li>1234 567 890</li>
               <li>Sydney, Australia</li>
               <li>123 Street Ultimo</li>
@@ -20,7 +20,7 @@ function Footer() {
             <p>
                 <ui className="list-unstyled">
                     <h4>
-                        <li>Stuff</li>
+                        <li className="list-unstyled">Stuff</li>
                     </h4>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
@@ -32,7 +32,7 @@ function Footer() {
             <p>
                 <ui className="list-unstyled">
                     <h4>
-                        <li>More Stuff</li>
+                        <li className="list-unstyled">More Stuff</li>
                     </h4>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>

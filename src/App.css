@@ -1,3 +1,7 @@
+body {
+  background-color: #FFFAED;
+}
+
 .App {
   text-align: center;
 }
@@ -8,9 +12,7 @@
   align-items: center;
   min-height: 10vh;
   background: blue;
-  color: white;
- 
-  
+  color: #FFFAED;
 }
 
 .nav-links {
@@ -25,23 +27,30 @@
 
 h1{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 h2{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 h3{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 h4{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 p{
   font-family: Poppins;
+  color: #1A535C;
 }
+
+
 
 .page-container{
   display: flex;
@@ -83,7 +92,7 @@ p{
 
 .text-wrapper h1{
   text-align: left;
-  color: white;
+  color: #FFFAED;
   padding-left: 5%;
 }
 
