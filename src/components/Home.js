@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom' 
+import '../App.css'
 
 
 const buttonStyle = {
@@ -8,14 +9,18 @@ const buttonStyle = {
 function Home() {
     return (
         <div>
-            <div>
-                <h1>Machi Ramen</h1>
-                <p>We are formed based on the philosophy of finding, preserving and spreading 
-                    original flavors to everyone.
-                </p>
+            <div className="content-wrapper">
+                <img src="/images/home.jpg" alt="homepage image" class="home"/>
+                <div className="text-wrapper">
+                    <h1>Machi Ramen</h1>
+                    <p>We are formed based on the philosophy of finding, preserving and spreading 
+                        original flavors to everyone.
+                    </p>
+                </div>
             </div>
+
             <div>
-                <h2>Japanese Street Food Specalists</h2>
+                <h2 className="padTop">Japanese Street Food Specalists</h2>
                 <p>We are formed based on the philosophy of finding, 
                     preserving and spreading original flavors to everyone.
                 </p>
@@ -38,7 +43,7 @@ function Home() {
                     <button>LEARN MORE</button>
                 </Link>
             </div>
-            <div>
+            <div className="padBottom">
                 <h3>Cosy</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
