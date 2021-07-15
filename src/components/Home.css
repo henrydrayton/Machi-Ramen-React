@@ -1,0 +1,61 @@
+.home-image {
+    padding-bottom: 80px;
+    align-items: center;
+}
+
+.home{
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .content-wrapper{
+    width: 100%;
+  }
+  
+  .content-wrapper img{
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  
+  .text-wrapper{
+    width: 100%;
+    position: relative;
+    margin-top: -30%;
+  }
+  
+  .text-wrapper h1{
+    text-align: left;
+    color: #FFFAED;
+    padding-left: 5%;
+  }
+  
+  /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+  
+  @media screen and (min-width: 601px) {
+    .text-wrapper h1 {
+      font-size: 60px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 600px) {
+    .text-wrapper h1 {
+      font-size: 30px;
+    }
+  }
+  
+  .text-wrapper p{
+    text-align: left;
+    color: white;
+    padding-left: 5%;
+    width: 30%;
+  }
+  
+  .padTop{
+    padding-top:15%;
+  }
+  
+  .padBottom{
+    padding-bottom: 5%;
+  }

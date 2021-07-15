@@ -1,16 +1,24 @@
+body {
+  background-color: #FFFAED;
+}
+
 .App {
   text-align: center;
 }
+
+.button {
+  
+  
+}
+
 
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: blue;
-  color: white;
- 
-  
+  background-color: #1A535C;
+  color: #FFFAED;
 }
 
 .nav-links {
@@ -25,23 +33,30 @@
 
 h1{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 h2{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 h3{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 h4{
   font-family: Lao MN;
+  color: #1A535C;
 }
 
 p{
   font-family: Poppins;
+  color: #1A535C;
 }
+
+
 
 .page-container{
   display: flex;
@@ -56,48 +71,4 @@ p{
 
 .content-wrap{
   flex:1;
-}
-
-.home{
-  width: 100%;
-  overflow: hidden;
-}
-
-.content-wrapper{
-  width: 100%;
-  
-  /* margin: 4% 10% 5% 10%; */
-}
-
-.content-wrapper img{
-  overflow: hidden;
-  width: 100%;
-}
-
-
-.text-wrapper{
-  width: 100%;
-  position: relative;
-  margin-top: -19%;
-}
-
-.text-wrapper h1{
-  text-align: left;
-  color: white;
-  padding-left: 5%;
-}
-
-.text-wrapper p{
-  text-align: left;
-  color: white;
-  padding-left: 5%;
-  width: 30%;
-}
-
-.padTop{
-  padding-top:15%;
-}
-
-.padBottom{
-  padding-bottom: 5%;
 }

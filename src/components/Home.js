@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom' 
 import '../App.css'
+import './Home.css'
 
 
 const buttonStyle = {
@@ -16,6 +17,9 @@ function Home() {
                     <p>We are formed based on the philosophy of finding, preserving and spreading 
                         original flavors to everyone.
                     </p>
+                    <Link style={buttonStyle} to='/about'>
+                    <button className="button">LEARN MORE</button>
+                    </Link>
                 </div>
             </div>
 
@@ -30,6 +34,7 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
+                <img src="/images/family.png" alt="homepage image" class="home-image"/>
                 <Link style={buttonStyle} to='/about'>
                     <button>LEARN MORE</button>
                 </Link>
@@ -39,6 +44,7 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
+                <img src="/images/authentic.png" alt="homepage image" class="home-image"/>
                 <Link style={buttonStyle} to='/about'>
                     <button>LEARN MORE</button>
                 </Link>
@@ -48,6 +54,7 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
+                <img src="/images/cosy.png" alt="homepage image" class="home-image"/>
                 <Link style={buttonStyle} to='/about'>
                     <button>LEARN MORE</button>
                 </Link>
