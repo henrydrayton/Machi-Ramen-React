@@ -47,9 +47,11 @@ p{
 
 .items-container{
   flex-direction: row;
+  
 }
 
 .content-wrap{
   flex:1;
+  
 }
 

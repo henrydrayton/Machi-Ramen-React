@@ -1,15 +1,29 @@
 .main-footer{
-    color: white;
-    background-color: blue;
-    padding-top: 3em;
+    color: #FFFAED;
+    background-color: #1A535C;
+    padding-top: 1em;
     position: relative;
     bottom: 0;
     width: 100%;
     
-
 }
 
 .list-unstyled{
     list-style: none;
+    
+}
+
+.col{
+    display: flex;  
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+
+.items-container{
+    flex-direction: row;
+   
 }
 
