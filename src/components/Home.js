@@ -1,5 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom' 
 
+
+const buttonStyle = {
+};
 
 function Home() {
     return (
@@ -21,21 +25,27 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <button>LEARN MORE</button>
+                <Link style={buttonStyle} to='/about'>
+                    <button>LEARN MORE</button>
+                </Link>
             </div>
             <div>
                 <h3>Authentic</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <button>LEARN MORE</button>
+                <Link style={buttonStyle} to='/about'>
+                    <button>LEARN MORE</button>
+                </Link>
             </div>
             <div>
                 <h3>Cosy</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <button>LEARN MORE</button>
+                <Link style={buttonStyle} to='/about'>
+                    <button>LEARN MORE</button>
+                </Link>
             </div>
             
                 
