@@ -1,5 +1,5 @@
-
-
+/* About Image */
+/* If the screen size is 600px wide or more */
 @media screen and (min-width: 601px) {
     .about {
       padding-top: 5%; 
@@ -7,26 +7,74 @@
     }
   }
   
-  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-  @media screen and (max-width: 600px) {
+  /* If the screen size is 600px wide or less */
+  @media screen and (max-width: 769px) {
     .about {
         padding-top: 10%; 
         width: 300px;
     }
   }
 
-  .origin {
+
+/* If the screen size is 600px wide or more */
+
+@media screen and (min-width: 769px) {
+    .origin {
+        text-align: left;
+        width: 30%;
+        margin-left: 8vw;
+        padding-top: 50px;
+        position:relative; 
+    }
+  }
+  
+  
+
+@media screen and (min-width: 768px) {
+    .authentic {
+        text-align: right;
+        width: 30%;
+        margin-left: 60vw;
+        padding-top: 50px;
+        position:relative; 
+    }
+  }
+  
+  /* /* If the screen size is 600px wide or less */
+  @media screen and (max-width: 768px) {
+    .authentic {
+        text-align: justify;
+        width: 70%;
+        padding-top: 50px;
+        margin-left: 15vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .origin {
+        text-align: justify;
+        width: 70%;
+        padding-top: 50px;
+        margin-left: 15vw;
+    }
+  }
+
+
+  
+  /* .origin {
       text-align: left;
       width: 30%;
       padding-top: 200px;
-      padding-left: 60px;
-  }
+      padding-left: 110px;
+  } */
 
-  .authentic {
+  /* .authentic {
     text-align: right;
     width: 30%;
-    margin-left: 79rem;
+    margin-left: 75rem;
     padding-top: 200px;
-  }
+    position:relative; 
+   
+  } */
 
   
