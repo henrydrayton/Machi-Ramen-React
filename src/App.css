@@ -6,12 +6,18 @@ body {
   text-align: center;
 }
 
+.button {
+  
+  
+}
+
+
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: blue;
+  background-color: #1A535C;
   color: #FFFAED;
 }
 
@@ -62,7 +68,6 @@ p{
   flex-direction: row;
   
 }
-
 .content-wrap{
   flex:1;
 }
@@ -74,8 +79,6 @@ p{
 
 .content-wrapper{
   width: 100%;
-  
-  /* margin: 4% 10% 5% 10%; */
 }
 
 .content-wrapper img{
@@ -87,13 +90,28 @@ p{
 .text-wrapper{
   width: 100%;
   position: relative;
-  margin-top: -19%;
+  margin-top: -30%;
 }
 
 .text-wrapper h1{
   text-align: left;
   color: #FFFAED;
   padding-left: 5%;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+
+@media screen and (min-width: 601px) {
+  .text-wrapper h1 {
+    font-size: 60px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .text-wrapper h1 {
+    font-size: 30px;
+  }
 }
 
 .text-wrapper p{

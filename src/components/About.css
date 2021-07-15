@@ -1,0 +1,29 @@
+
+
+@media screen and (min-width: 601px) {
+    .about {
+      padding-top: 5%; 
+      width: 600px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 600px) {
+    .about {
+        padding-top: 10%; 
+        width: 300px;
+    }
+  }
+
+  .origin {
+      text-align: left;
+      width: 30%;
+      padding-top: 200px;
+      padding-left: 60px;
+  }
+
+  .authentic {
+    text-align: right;
+    width: 30%;
+    padding-top: 200px;
+  }

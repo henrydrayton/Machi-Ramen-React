@@ -10,7 +10,7 @@ function Navv() {
 
     return (
         <nav className="nav">
-            <h3>Logo</h3>
+            <h3 className="list-unstyled">Logo</h3>
             <ul className="nav-links">
                 <Link style={navStyle} to='/home'>
                     <li>HOME</li>

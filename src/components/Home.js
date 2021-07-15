@@ -16,6 +16,10 @@ function Home() {
                     <p>We are formed based on the philosophy of finding, preserving and spreading 
                         original flavors to everyone.
                     </p>
+        
+                    <Link style={buttonStyle} to='/about'>
+                    <button className="button">LEARN MORE</button>
+                    </Link>
                 </div>
             </div>
 
