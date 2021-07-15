@@ -9,6 +9,8 @@
   min-height: 10vh;
   background: blue;
   color: white;
+ 
+  
 }
 
 .nav-links {
@@ -17,7 +19,9 @@
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  font-family: poppins;
 }
+
 
 h1{
   font-family: Lao MN;
@@ -47,9 +51,11 @@ p{
 
 .items-container{
   flex-direction: row;
+  
 }
 
 .content-wrap{
   flex:1;
+  
 }
 

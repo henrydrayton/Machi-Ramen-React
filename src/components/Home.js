@@ -21,19 +21,26 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
+                <button>LEARN MORE</button>
             </div>
             <div>
                 <h3>Authentic</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
+                <button>LEARN MORE</button>
             </div>
             <div>
                 <h3>Cosy</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
+                <button>LEARN MORE</button>
             </div>
+            
+                
+                
+           
 
         </div>
     );

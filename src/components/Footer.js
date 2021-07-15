@@ -4,12 +4,12 @@ import './Footer.css'
 function Footer() {
   return (
     <div className="main-footer">
-      <div className="container">
+      <div className="items-container">
         <div className="row">
           {/* Column1 */}
           <div className="col">
-            <h4>MACHI RAMEN</h4>
             <h5 className="list-unstyled">
+                <h4>MACHI RAMEN</h4>
               <li>1234 567 890</li>
               <li>Sydney, Australia</li>
               <li>123 Street Ultimo</li>
@@ -17,10 +17,11 @@ function Footer() {
           </div>
           {/* Column2 */}
           <div className="col">
-            <h4>Stuff</h4>
             <p>
                 <ui className="list-unstyled">
-                    <li>Lorem Ipsum</li>
+                    <h4>
+                        <li>Stuff</li>
+                    </h4>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
                 </ui>
@@ -28,10 +29,11 @@ function Footer() {
           </div>
           {/* Column3 */}
           <div className="col">
-            <h4>More Stuff</h4>
             <p>
                 <ui className="list-unstyled">
-                    <li>Lorem Ipsum</li>
+                    <h4>
+                        <li>More Stuff</li>
+                    </h4>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
                 </ui>
@@ -41,7 +43,7 @@ function Footer() {
         <hr />
         <div className="row">
           <p className="col-sm">
-            &copy;{new Date().getFullYear()} THICC MEMES | All rights reserved |
+            &copy;{new Date().getFullYear()} MACHI RAMEN | All rights reserved |
             Terms Of Service | Privacy
           </p>
         </div>

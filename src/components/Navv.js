@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 function Navv() {
 
     const navStyle = {
-        color: 'white'
+        color: 'white',
+        textDecoration: 'none'
     };
 
     return (
@@ -12,19 +13,19 @@ function Navv() {
             <h3>Logo</h3>
             <ul className="nav-links">
                 <Link style={navStyle} to='/home'>
-                    <li>Home</li>
+                    <li>HOME</li>
                 </Link>
                 <Link style={navStyle} to='/about'>
-                    <li>About</li>
+                    <li>ABOUT</li>
                 </Link>
                 <Link style={navStyle} to='/menu'>
-                    <li>Menu</li>
+                    <li>MENU</li>
                 </Link>
                 <Link style={navStyle} to='/contact'>
-                    <li>Contact</li>
+                    <li>CONTACT</li>
                 </Link>
                 <Link style={navStyle} to='/login'>
-                    <li>Log In</li>
+                    <li>LOG IN</li>
                 </Link>
             </ul>
         </nav>
