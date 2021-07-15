@@ -31,7 +31,7 @@ function About() {
                      because we know that that nostalgia can be too much sometimes.
                 </p>
             </div>
-            <div>
+            <div className="blurb">
                 <h4>We wish that every single visit to Machi Ramen would recharge you with more energy to continue 
                     working and experiencing everything that life has to offer.
                 </h4>
