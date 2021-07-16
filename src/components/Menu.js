@@ -7,7 +7,7 @@ function Menu() {
 
     const [items, setItems] = useState([]);
 
-// input rails api here
+
     const fetchItems = async () => {
         const data = await fetch(
             'https://fortnite-api.theapinetwork.com/prod09/upcoming/get'
