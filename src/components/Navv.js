@@ -24,7 +24,7 @@ function Navv() {
                 <Link style={navStyle} to='/contact'>
                     <li>CONTACT</li>
                 </Link>
-                <Link style={navStyle} to='/login'>
+                <Link style={navStyle} to='/signin'>
                     <li>LOG IN</li>
                 </Link>
             </ul>
