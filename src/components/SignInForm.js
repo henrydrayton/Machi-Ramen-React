@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
+import {signIn} from '../api/auth'
+import {useGlobalState} from '../utils/stateContext'
 
-function SignInForm({ onSignIn }) {
+function SignInForm(history) {
+	const {dispatch} = useGlobalState()
+    
     const initialFormState = {
 		email: '',
 		password: ''
@@ -16,7 +20,26 @@ function SignInForm({ onSignIn }) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        onSignIn(formState)
+        signIn(formState)
+        .then((resp) => {
+            if (resp.ok) {
+                const token = resp.headers.get("Authorization");
+                console.log(token);
+                localStorage.setItem('session_token', token);
+                dispatch({type: 'setToken', data: token})
+                return resp.json();
+                } else {
+                throw new Error(resp);
+                }
+            })
+        .then((json) => {
+            console.dir(json);
+            const email = json.data.email;
+            console.log(email);
+            localStorage.setItem('email', email);
+            dispatch({type: 'setLoggedInUser', data: email});
+        } )
+        .catch((err) => console.error(err));
     }
 
     return (

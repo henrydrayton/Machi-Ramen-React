@@ -1,4 +1,5 @@
-const TOKEN_KEY = 'session_token';
+import React from 'react'
+import {useGlobalState} from '../utils/stateContext';
 
 export const API_URL = process.env.REACT_APP_API_URL
 
@@ -14,14 +15,7 @@ export async function signIn({email, password}) {
         cache: 'no-cache',
         body: JSON.stringify({ user: { email, password } })
     });
-    if (resp.ok) {
-        const token = resp.headers.get("Authorization");
-        console.dir(token);
-        return setToken(token);
-    } else {
-        const { status, statusText } = resp;
-        return Promise.reject({ status, statusText });
-    }
+    return resp;
 }
 
 
@@ -37,14 +31,7 @@ export async function signUp({email, password, first_name}) {
         cache: 'no-cache',
         body: JSON.stringify({ user: { email, password, first_name } })
     });
-    if (resp.ok) {
-        const token = resp.headers.get('Authorization');
-        console.dir(token);
-        return setToken(token);
-    } else {
-        const { status, statusText } = resp;
-        return Promise.reject({ status, statusText });
-    }
+    return resp;
 }
 
 export function signOut() {
@@ -60,7 +47,9 @@ export function signOut() {
         }
     }).then(resp => {
         if (resp.ok) {
-            return removeToken();
+            localStorage.removeItem('email');
+            localStorage.removeItem('session_token');
+            return 
         } else {
             console.error({ resp })
             const { status, statusText } = resp;
@@ -70,15 +59,5 @@ export function signOut() {
 }
 
 export function getToken() {
-    return localStorage.getItem(TOKEN_KEY);
-}
-
-function setToken(token) {
-    localStorage.setItem(TOKEN_KEY, token)
-    return token;
-}
-
-function removeToken() {
-    localStorage.removeItem(TOKEN_KEY);
-    return true;
+    return localStorage.getItem('session_token');
 }

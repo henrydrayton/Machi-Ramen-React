@@ -1,31 +1,40 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import {useGlobalState} from '../utils/stateContext'
 
 function Menu() {
-    useEffect(() => {
-        fetchItems();
-    }, []);
+    const {store} = useGlobalState()
+	const {items} = store
+	return  (
+		items ?
+		(
+			<table>
+				<thead>
+					<tr>
+						<th>Category ID</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						items.map(item => (
+							<tr key={item.id} >
+								<td>{item.category_id}</td>
+								<td><Link to={`/items/${item.id}`}>{item.name}</Link></td>
+								<td>{item.price}</td>
+								<td>{item.description}</td>
+							</tr>
+						))
+					}
+				</tbody>
+			</table>
+		) : (
+			<div>Loading&hellip;</div>
 
-    const [items, setItems] = useState([]);
-
-
-    const fetchItems = async () => {
-        const data = await fetch(
-            'https://fortnite-api.theapinetwork.com/prod09/upcoming/get'
-        );
-
-        const items = await data.json();        
-        console.log(items.items);
-        setItems(items.items);
-    };
-
-    return (
-        <div>
-            {items.map(item => (
-                <h1 key={item.itemid}>{item.name}</h1>
-            ))}
-            <h1>Menu</h1>
-        </div>
-    );
+		)
+	)
 }
 
 export default Menu;
