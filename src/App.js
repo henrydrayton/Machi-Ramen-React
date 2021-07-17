@@ -7,7 +7,7 @@ import Menu from './components/Menu'
 import Contact from './components/Contact'
 import SignInForm from './components/SignInForm';
 import SignUpForm from './components/SignUpForm';
-import { signIn, getToken, signUp, signOut } from './api/auth'
+import { getToken, signOut } from './api/auth'
 import Footer from './components/Footer'
 import './App.css'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
@@ -16,10 +16,11 @@ import {StateContext} from './utils/stateContext'
 import {getCategories} from './api/categoryServices'
 import {getItems} from './api/itemServices'
 import ItemDetails from './components/ItemDetails'
+import NewItem from './components/NewItem'
 
 function App() {
-  const [token, setToken] = useState(getToken());
-  const [flash, setFlash] = useState('');
+  const [setToken] = useState(getToken());
+  // const [flash, setFlash] = useState('');
 
   const initialState = {
 		loggedInUser: localStorage.getItem('email') || null,
@@ -46,7 +47,7 @@ function App() {
           <Router> 
             <div className="App">
                 <Navv />
-                { flash && <div>{flash}</div> }
+                {/* { flash && <div>{flash}</div> } */}
                 <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route path="/home" component={Home} />
@@ -59,6 +60,8 @@ function App() {
                     signOut().then(() => setToken());
                     return <Redirect to='/home'/>
                   }} />
+                  <Route exact path='/items/new' component={NewItem} />
+                  <Route exact path='/items/:id/update' component={NewItem} />
                   <Route path='/items/:id' component={ItemDetails}/> 
 
                 </Switch>

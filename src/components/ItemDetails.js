@@ -8,7 +8,6 @@ import {getItem, deleteItem} from '../api/itemServices'
 function ItemDetails() {
 	const [item,setItem] = useState(null)
     const {id} = useParams()
-
 	const {store,dispatch} = useGlobalState()
     const {loggedInUser} = store
 
@@ -35,7 +34,7 @@ function ItemDetails() {
 			<p>Description: {item.description}</p>			
 			{loggedInUser === "admin@admin.com" &&
 				<div>
-					<Button onClick={() => history.push(`/items/update/${id}`)}>Update</Button>
+					<Button onClick={() => history.push(`/items/${id}/update`)}>Update</Button>
 					<Button onClick={handleDelete}>Delete</Button>
 				</div>
             }

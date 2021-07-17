@@ -5,7 +5,7 @@ import './About.css'
 function About() {
     return (
         <div>
-            <img src="/images/about.png" alt="about image" className="about"/>
+            <img src="/images/about.png" alt="about" className="about"/>
             <div className="vl"></div>
             <div className="origin">
                 <h3>Our Origins</h3>

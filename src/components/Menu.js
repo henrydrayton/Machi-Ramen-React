@@ -15,6 +15,7 @@ function Menu() {
 						<th>Name</th>
 						<th>Price</th>
 						<th>Description</th>
+						<th>Item ID</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -25,6 +26,7 @@ function Menu() {
 								<td><Link to={`/items/${item.id}`}>{item.name}</Link></td>
 								<td>{item.price}</td>
 								<td>{item.description}</td>
+								<td>{item.id}</td>
 							</tr>
 						))
 					}

@@ -26,7 +26,10 @@ function Navv() {
             <ul className="nav-links">
                 <li><NavLink onClick={() => history.push('/home')}>HOME</NavLink></li>
                 <li><NavLink onClick={() => history.push('/menu')}>MENU</NavLink></li>
-                <li><NavLink onClick={() => history.push('/menu')}>CONTACT US</NavLink></li>
+                <li><NavLink onClick={() => history.push('/contact')}>CONTACT US</NavLink></li>
+                {loggedInUser === "admin@admin.com" && 
+                    <li><NavLink onClick={() => history.push('/items/new') }>ADD MENU ITEM</NavLink></li>
+                }
                 {loggedInUser ?
                     <>
                     <li><NavLink onClick={handleSignOut}>LOG OUT</NavLink></li>

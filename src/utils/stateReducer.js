@@ -36,6 +36,25 @@ export default function reducer (state, action) {
 				items: updatedItems
 			}
 		}
+		case 'addItem': {
+			return {
+				...state,
+				items: [action.data, ...state.items]
+			}
+		}
+		case 'updateItem': {
+			console.log("array to find", state.items)
+			const item = state.items.find((item) => item.id == action.data.id)
+			console.log("item to update in globalstate", item)
+			const theRest = state.items.filter((item) => item.id != action.data.id)
+			console.log("action.data",action.data)
+			const updatedItem = Object.assign(item, action.data)
+			return {
+				...state,
+				items: [updatedItem, ...theRest]
+			}
+
+		}
 		default: return state
     }
 }

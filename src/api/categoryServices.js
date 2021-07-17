@@ -10,7 +10,3 @@ export async function getCategories() {
     })
     return response.json()
 }
-// export async function getCategories() {
-//     const response = await API_URL.get('/categories')
-//     return response.data
-// }
