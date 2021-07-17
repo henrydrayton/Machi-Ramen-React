@@ -5,11 +5,12 @@ import './Home.css'
 
 
 const buttonStyle = {
+   
 };
 
 function Home() {
     return (
-        <div>
+        <div className="container-home">
             <div className="content-wrapper">
                 <img src="/images/home.jpg" alt="homepage" className="home"/>
                 <div className="text-wrapper">
@@ -29,7 +30,65 @@ function Home() {
                     preserving and spreading original flavors to everyone.
                 </p>
             </div>
-            <div>
+
+
+
+
+
+{/* NEW CSS */}
+
+        <div className="screenshot">
+            <div className="screenshot-item">
+                <img src="/images/family.png" alt="homepage" className="home-image"/>
+                <h3>Family Run</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div className="buttonClass">
+                    <Link style={buttonStyle} to='/about'>
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
+                    </Link>
+                </div>
+            </div>
+
+
+            <div className="screenshot-item">
+                <img src="/images/authentic.png" alt="homepage" className="home-image"/>
+                <h3>Authentic</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div className="buttonClass">
+                    <Link style={buttonStyle} to='/about'>
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
+                    </Link>
+                </div>
+            </div>
+
+
+            <div className="screenshot-item">
+                <img src="/images/cosy.png" alt="homepage" className="home-image"/>
+                <h3>Cosy</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div className="buttonClass">
+                    <Link style={buttonStyle} to='/about'>
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
+                    </Link>
+                </div>
+            </div>
+        </div>
+
+
+
+{/* OLD CSS */}
+
+
+
+
+            {/* <div className="text">
                 <h3>Family Run</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -39,7 +98,7 @@ function Home() {
                     <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
                 </Link>
             </div>
-            <div>
+            <div className="text">
                 <h3>Authentic</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -49,7 +108,7 @@ function Home() {
                     <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
                 </Link>
             </div>
-            <div className="padBottom">
+            <div className="padBottom text">
                 <h3>Cosy</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -58,12 +117,7 @@ function Home() {
                 <Link style={buttonStyle} to='/about'>
                     <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
                 </Link>
-            </div>
-            
-                
-                
-           
-
+            </div> */}
         </div>
     );
 }

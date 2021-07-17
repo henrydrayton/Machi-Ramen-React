@@ -34,16 +34,21 @@ body {
 h1{
   font-family: Lao MN;
   color: #1A535C;
+  font-size: 80px;
+
 }
 
 h2{
   font-family: Lao MN;
   color: #1A535C;
+  
 }
 
 h3{
   font-family: Lao MN;
   color: #1A535C;
+  font-size: 30px;
+  /* font-size:x-large; */
 }
 
 h4{
