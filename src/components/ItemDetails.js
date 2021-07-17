@@ -24,7 +24,7 @@ function ItemDetails() {
 		deleteItem(id)
 		.then(() => {
 			dispatch({type: 'deleteItem', data: id})
-			history.push('/items')
+			history.push('/menu')
 		})
 	}
     return (

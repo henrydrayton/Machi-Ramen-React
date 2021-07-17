@@ -13,11 +13,13 @@ export async function getItems() {
 }
 
 export async function deleteItem(id) {
+    const token = localStorage.getItem('session_token')
 	const url = `${API_URL}/items/${id}`
 	const response = await fetch(url, {
         method: 'delete',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': token
         },
     })
 	return response.data

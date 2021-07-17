@@ -27,6 +27,15 @@ export default function reducer (state, action) {
 				items: action.data
 			}
 		}
+		case 'deleteItem': {
+			const updatedItems = state.items.filter((item) => {
+				return item.id !== parseInt(action.data)
+			})
+			return {
+				...state,
+				items: updatedItems
+			}
+		}
 		default: return state
     }
 }
