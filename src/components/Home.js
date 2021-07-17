@@ -44,9 +44,11 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <Link style={buttonStyle} to='/about'>
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
-                </Link>
+                <div className="buttonClass">
+                    <Link style={buttonStyle} to='/about'>
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
+                    </Link>
+                </div>
             </div>
 
 
@@ -57,9 +59,11 @@ function Home() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
                     eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <Link style={buttonStyle} to='/about'>
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
-                </Link>
+                <div className="buttonClass">
+                    <Link style={buttonStyle} to='/about'>
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
+                    </Link>
+                </div>
             </div>
 
 
@@ -69,9 +73,11 @@ function Home() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <Link style={buttonStyle} to='/about'>
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
-                </Link>
+                <div className="buttonClass">
+                    <Link style={buttonStyle} to='/about'>
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">LEARN MORE</button>
+                    </Link>
+                </div>
             </div>
         </div>
 
