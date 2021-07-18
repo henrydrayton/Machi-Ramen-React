@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import {signUp} from '../api/auth'
 import {useGlobalState} from '../utils/stateContext'
-
-function SignUpForm(history) {
+import {useHistory} from 'react-router'
+function SignUpForm() {
 	const {dispatch} = useGlobalState()
+    let history = useHistory()
     
     const initialFormState = {
 		email: '',
@@ -24,6 +25,7 @@ function SignUpForm(history) {
         signUp(formState)
         .then((resp) => {
             if (resp.ok) {
+                history.push(`/home`)
                 const token = resp.headers.get("Authorization");
                 console.log(token);
                 localStorage.setItem('session_token', token);

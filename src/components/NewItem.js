@@ -60,15 +60,17 @@ export default function NewItem() {
 			createItem({...formState})
             .then((res) => {
                 if (res.ok) {
-                    dispatch({type: "addItem", data: {...formState}})
-                    console.log(res);
                     history.push('/menu')
                     return res.json();
                 } else {
                     return res.text().then((text) => Promise.reject(text));
                 }
-              })
-            .then((json) => console.log(json))
+            })
+            .then((json) => {
+                console.log(json)
+                dispatch({type: "addItem", data: json})
+
+            })
             .catch((err) => console.error(err))
 		}
     }
