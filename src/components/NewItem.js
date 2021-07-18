@@ -69,7 +69,6 @@ export default function NewItem() {
             .then((json) => {
                 console.log(json)
                 dispatch({type: "addItem", data: json})
-
             })
             .catch((err) => console.error(err))
 		}
