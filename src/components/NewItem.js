@@ -28,6 +28,7 @@ export default function NewItem() {
 		if(id) {
 			getItem(id)
 			.then((item) => {
+				console.log("item to update: ",item)
 				const category = categories.find((category) => category.id === item.category_id)
 				setFormState({
 					category_id: category.id,
@@ -46,6 +47,7 @@ export default function NewItem() {
             .then((res) => {
                 if (res.ok) {
                     dispatch({type: "updateItem", data: {id: id, ...formState}})
+                    console.log(res);
                     history.push(`/items/${id}`)
                     return res.json();
                 } else {
@@ -58,14 +60,16 @@ export default function NewItem() {
 			createItem({...formState})
             .then((res) => {
                 if (res.ok) {
-                    dispatch({type: "addItem", data: {...formState}})
                     history.push('/menu')
                     return res.json();
                 } else {
                     return res.text().then((text) => Promise.reject(text));
                 }
-              })
-            .then((json) => console.log(json))
+            })
+            .then((json) => {
+                console.log(json)
+                dispatch({type: "addItem", data: json})
+            })
             .catch((err) => console.error(err))
 		}
     }

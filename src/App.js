@@ -38,7 +38,7 @@ function App() {
 		.then(categories => dispatch({type: 'setCategories', data: categories}))
 		.catch((error) => console.log(error))
 	},[])
-
+   
 
   return (
     <div className="page-container">
