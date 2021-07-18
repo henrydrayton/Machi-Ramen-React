@@ -46,7 +46,6 @@ export default function NewItem() {
             .then((res) => {
                 if (res.ok) {
                     dispatch({type: "updateItem", data: {id: id, ...formState}})
-                    
                     history.push(`/items/${id}`)
                     return res.json();
                 } else {
@@ -60,7 +59,6 @@ export default function NewItem() {
             .then((res) => {
                 if (res.ok) {
                     dispatch({type: "addItem", data: {...formState}})
-                    
                     history.push('/menu')
                     return res.json();
                 } else {

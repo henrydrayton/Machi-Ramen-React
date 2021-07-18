@@ -25,7 +25,6 @@ function SignUpForm(history) {
         .then((resp) => {
             if (resp.ok) {
                 const token = resp.headers.get("Authorization");
-                
                 localStorage.setItem('session_token', token);
                 dispatch({type: 'setToken', data: token})
                 return resp.json();
@@ -34,9 +33,7 @@ function SignUpForm(history) {
                 }
             })
         .then((json) => {
-            
             const email = json.data.email;
-            
             localStorage.setItem('email', email);
             dispatch({type: 'setLoggedInUser', data: email});
         } )
