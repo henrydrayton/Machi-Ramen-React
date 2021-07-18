@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import {signIn} from '../api/auth'
-import {useGlobalState} from '../utils/stateContext'
+import {signIn} from '../api/auth';
+import {useGlobalState} from '../utils/stateContext';
+import { useHistory } from 'react-router-dom';
 
-function SignInForm(history) {
+function SignInForm() {
 	const {dispatch} = useGlobalState()
-    
+    let history = useHistory()
+
     const initialFormState = {
 		email: '',
 		password: ''
@@ -23,6 +25,7 @@ function SignInForm(history) {
         signIn(formState)
         .then((resp) => {
             if (resp.ok) {
+                history.push(`/home`)
                 const token = resp.headers.get("Authorization");
                 localStorage.setItem('session_token', token);
                 dispatch({type: 'setToken', data: token})
