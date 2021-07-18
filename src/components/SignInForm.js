@@ -25,10 +25,10 @@ function SignInForm() {
         signIn(formState)
         .then((resp) => {
             if (resp.ok) {
-                history.push(`/home`)
                 const token = resp.headers.get("Authorization");
                 localStorage.setItem('session_token', token);
                 dispatch({type: 'setToken', data: token})
+                history.push(`/home`)
                 return resp.json();
                 } else {
                 throw new Error(resp);
