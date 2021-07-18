@@ -54,7 +54,6 @@ export async function createItem({ category_id, name, description, price }){
 
 export async function updateItem({id, category_id, name, description, price }){
     const token = localStorage.getItem('session_token')
-    console.log("this is the token", token)
     const url = `${API_URL}/items/${id}`
 	const response = await fetch(url, {
         method: 'PUT',
