@@ -28,7 +28,6 @@ export default function NewItem() {
 		if(id) {
 			getItem(id)
 			.then((item) => {
-				console.log("item to update: ",item)
 				const category = categories.find((category) => category.id === item.category_id)
 				setFormState({
 					category_id: category.id,
@@ -47,7 +46,6 @@ export default function NewItem() {
             .then((res) => {
                 if (res.ok) {
                     dispatch({type: "updateItem", data: {id: id, ...formState}})
-                    console.log(res);
                     history.push(`/items/${id}`)
                     return res.json();
                 } else {
