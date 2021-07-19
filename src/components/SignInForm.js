@@ -45,9 +45,9 @@ function SignInForm() {
 
     return (
         <div className="Form">
-        <div class="flex items-center justify-center">
+        <div className="flex items-center justify-center">
             <div class="w-full max-w-md">
-                <form onSubmit={handleSubmit} class="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
+                <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
                 <div class="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
                     Machi Ramen Log In
                 </div>
@@ -60,11 +60,11 @@ function SignInForm() {
                             v-model="form.email"
                             type="email"
                             required
-                            autofocus
+                            autoFocus
                             placeholder="Email"/>
                     </fieldset>
                 </div>
-                <div class="mb-6">
+                <div className="mb-6">
                     <fieldset>
                         <label  class="block text-gray-700 text-sm font-normal mb-2" for="password" >Password</label>
                         <input name='password' type='password' value={formState.password} onChange={handleChange} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -73,7 +73,7 @@ function SignInForm() {
                             placeholder="Password"
                             name="password"
                             required
-                            autocomplete="current-password"/>
+                            autoComplete="current-password"/>
                     </fieldset>
                     <button class="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Sign In</button>
                 </div>
