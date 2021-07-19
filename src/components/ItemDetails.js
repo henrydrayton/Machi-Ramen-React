@@ -1,8 +1,7 @@
 import React,{ useState,useEffect} from 'react'
-
+import { Link } from 'react-router-dom';
 import {useParams,useHistory} from 'react-router-dom'
 import {useGlobalState} from '../utils/stateContext'
-import {Button} from './Styled'
 import {getItem, deleteItem} from '../api/itemServices'
 
 function ItemDetails() {
@@ -34,8 +33,8 @@ function ItemDetails() {
 			<p>Description: {item.description}</p>			
 			{loggedInUser === "admin@admin.com" &&
 				<div>
-					<Button onClick={() => history.push(`/items/${id}/update`)}>Update</Button>
-					<Button onClick={handleDelete}>Delete</Button>
+					<Link to={`/items/${item.id}/update`}>Update</Link>
+					<Link to='/menu' onClick={handleDelete}>Delete</Link>
 				</div>
             }
 		</div>

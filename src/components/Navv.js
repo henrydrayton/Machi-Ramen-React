@@ -1,8 +1,8 @@
 import React from 'react'
-import { NavLink } from './Styled'
-import { useHistory } from 'react-router-dom' 
 import { signOut } from '../api/auth'
 import {useGlobalState} from '../utils/stateContext'
+import { Link } from 'react-router-dom' 
+import {useHistory} from 'react-router-dom'
 
 function Navv() {
     let history = useHistory()
@@ -16,7 +16,7 @@ function Navv() {
 		.then(() => {
 			dispatch({type: 'setLoggedInUser', data: null})
 			dispatch({type: 'setToken', data: null})
-            history.push('/home')
+			history.push('/home')
 		})
 	}
 
@@ -24,20 +24,20 @@ function Navv() {
         <nav className="nav">
             <h3 className="list-unstyled">Logo</h3>
             <ul className="nav-links">
-                <li><NavLink onClick={() => history.push('/home')}>HOME</NavLink></li>
-                <li><NavLink onClick={() => history.push('/menu')}>MENU</NavLink></li>
-                <li><NavLink onClick={() => history.push('/contact')}>CONTACT US</NavLink></li>
+                <li><Link to='/home'>HOME</Link></li>
+                <li><Link to='/menu'>MENU</Link></li>
+                <li><Link to='/contact'>CONTACT US</Link></li>
                 {loggedInUser === "admin@admin.com" && 
-                    <li><NavLink onClick={() => history.push('/items/new') }>ADD MENU ITEM</NavLink></li>
+                    <li><Link to='/items/new'>ADD MENU ITEM</Link></li>
                 }
                 {loggedInUser ?
                     <>
-                    <li><NavLink onClick={handleSignOut}>LOG OUT</NavLink></li>
+                    <li><Link to='/home' onClick={handleSignOut}>LOG OUT</Link></li>
                     </>
                 :
                     <>
-                    <li><NavLink onClick={() => history.push('/signin')}>LOG IN</NavLink></li>
-                    <li><NavLink onClick={() => history.push('/signup')}>SIGN UP</NavLink></li>
+                    <li><Link to='/signin'>LOG IN</Link></li>
+                    <li><Link to='/signup'>SIGN UP</Link></li>
                     </>
                 }
             </ul>
