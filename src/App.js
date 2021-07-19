@@ -39,7 +39,6 @@ function App() {
 		.catch((error) => console.log(error))
 	},[])
    
-
   return (
     <div className="page-container">
       <div className="content-wrap">

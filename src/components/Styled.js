@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 
-
 export const NavLink = styled.span `
     color: '#ffffff';
     textDecoration: 'none'
