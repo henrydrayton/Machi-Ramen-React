@@ -6,39 +6,38 @@ import './Menu.css'
 function Menu() {
     const {store} = useGlobalState()
 	const {items} = store
-	return  (
-		items ?
-		(
-			
-			<table>
-				<thead>
-				<div className="Menu">
-					<h1>Menu</h1>
-				</div>
-					<tr>
-						<th>Category ID</th>
-						<th>Name</th>
-						<th>Price</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						items.map(item => (
-							<tr key={item.id} >
-								<td>{item.category_id}</td>
-								<td><Link to={`/items/${item.id}`}>{item.name}</Link></td>
-								<td>{item.price}</td>
-								<td>{item.description}</td>
-							</tr>
-						))
-					}
-				</tbody>
-			</table>
-		) : (
-			<div>Loading&hellip;</div>
 
-		)
+	return  (
+	
+			items ?
+			(
+				<table>
+					<thead>
+						<tr>
+							<th>Category ID</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							items.map(item => (
+								<tr key={item.id} >
+									<td>{item.category_id}</td>
+									<td><Link to={`/items/${item.id}`}>{item.name}</Link></td>
+									<td>{item.price}</td>
+									<td>{item.description}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			) : (
+				<div>Loading&hellip;</div>
+
+			)
+		
 	)
 }
 
