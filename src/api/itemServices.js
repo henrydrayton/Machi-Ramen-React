@@ -48,7 +48,6 @@ export async function createItem({ category_id, name, description, price }){
         cache: 'no-cache',
         body: JSON.stringify({ item: { category_id, name, description, price } })
     })
-	console.dir(response)
 	return response
 }
 
