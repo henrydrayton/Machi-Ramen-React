@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {useGlobalState} from '../utils/stateContext'
+import './Menu.css'
 
 function Menu() {
     const {store} = useGlobalState()
@@ -8,14 +9,17 @@ function Menu() {
 	return  (
 		items ?
 		(
+			
 			<table>
 				<thead>
+				<div className="Menu">
+					<h1>Menu</h1>
+				</div>
 					<tr>
 						<th>Category ID</th>
 						<th>Name</th>
 						<th>Price</th>
 						<th>Description</th>
-						<th>Item ID</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -26,7 +30,6 @@ function Menu() {
 								<td><Link to={`/items/${item.id}`}>{item.name}</Link></td>
 								<td>{item.price}</td>
 								<td>{item.description}</td>
-								<td>{item.id}</td>
 							</tr>
 						))
 					}
