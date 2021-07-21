@@ -17,7 +17,9 @@ function ItemDetails() {
 		.then((item) => setItem(item))
 		.catch((error) => console.log(error))
 	},[id])
+
     if (!item) return null
+
 	function handleDelete() {
 		deleteItem(id)
 		.then(() => {
@@ -25,6 +27,7 @@ function ItemDetails() {
 			history.push('/menu')
 		})
 	}
+	
     return (
 		<div>
 			<p>Category: {item.category_id}</p>
