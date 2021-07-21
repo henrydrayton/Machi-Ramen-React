@@ -3,13 +3,26 @@ import {Link} from 'react-router-dom'
 import {useGlobalState} from '../utils/stateContext'
 import './Menu.css'
 
-function Menu() {
+
+function Menu({itemsTest}) {
+//  const {store} = useGlobalState()
+
+	// let items 
+	// if  (itemsTest) {
+	// 	items = itemsTest
+	// } else {
+	// 	// const {store} = useGlobalState()
+	// 	items = store.items
+	// }
+
     const {store} = useGlobalState()
 	const {items} = store
 
 	return  (
-	
-			items ?
+		<div>
+			<h1>Menu</h1>
+
+			{items ?
 			(
 				<table>
 					<thead>
@@ -36,8 +49,8 @@ function Menu() {
 			) : (
 				<div>Loading&hellip;</div>
 
-			)
-		
+			)}
+		</div>
 	)
 }
 
