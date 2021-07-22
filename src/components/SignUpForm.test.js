@@ -2,30 +2,33 @@ import React from 'react'
 import { StaticRouter } from 'react-router'
 import { render, fireEvent } from '@testing-library/react'
 import { StateContext } from '../utils/stateContext'
-import SignInForm from './SignInForm'
+import SignUpForm from './SignUpForm'
 
 
-describe('SignInForm', () => {
+describe('SignUpForm', () => {
     const initialFormState = {
-        items: [
+        user: [
             {
                 email: 'admin@admin.com',
-                password: 'password'
+                password: 'password',
+                first_name: 'admin'
             }
         ]
     }
 
     it('should display text input form', () => {
         const { getByText } = render(
-            <StateContext.Provider value={{ form: { items: undefined } }}>
+            <StateContext.Provider value={{ form: { user: undefined } }}>
                 <StaticRouter>
-                    <SignInForm />
+                    <SignUpForm />
                 </StaticRouter>
             </StateContext.Provider>
         )
 
-        expect(getByText(/email/i)).toBeInTheDocument()
-        expect(getByText(/sign in/i)).toBeInTheDocument();
+        expect(getByText(/email/i)).toBeInTheDocument();
+        expect(getByText(/password/i)).toBeInTheDocument()
+        expect(getByText(/first name/i)).toBeInTheDocument()
+        expect(getByText(/sign up/i)).toBeInTheDocument();
 
     })
 })
