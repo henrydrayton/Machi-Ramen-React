@@ -49,7 +49,7 @@ function SignInForm() {
             <div className="w-full max-w-md">
                 <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
                 <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
-                    Machi Ramen Log In
+                    Machi Ramen Login
                 </div>
                 <div className="mb-4">
                     <fieldset>
@@ -73,7 +73,7 @@ function SignInForm() {
                             placeholder="Password"
                             name="password"
                             required
-                            autoComplete="current-password"/>
+                            autoComplete="current-password" />
                     </fieldset>
                     <button className="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Sign In</button>
                 </div>

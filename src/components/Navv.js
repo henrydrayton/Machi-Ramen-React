@@ -22,7 +22,8 @@ function Navv() {
 
     return (
         <nav className="nav">
-            <h3 className="list-unstyled">Logo</h3>
+            {/* <h3 className="list-unstyled">Logo</h3> */}
+            <img src="/images/logo.png" alt="homepage" className="logo" />
             <ul className="nav-links">
                 <li><Link to='/home'>HOME</Link></li>
                 <li><Link to='/menu'>MENU</Link></li>
