@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import {signUp} from '../api/auth'
 import {useGlobalState} from '../utils/stateContext'
 import {useHistory} from 'react-router'
+import './SignInForm.css'
+
+
 function SignUpForm() {
 	const {dispatch} = useGlobalState()
     let history = useHistory()
@@ -43,21 +46,52 @@ function SignUpForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit} >
-            <fieldset>
-                <label>Email</label>
-                <input name='email' type='text' value={formState.email} onChange={handleChange}/>
-            </fieldset>
-            <fieldset>
-                <label>Password</label>
-                <input name='password' type='password' value={formState.password} onChange={handleChange}/>
-            </fieldset>            
-            <fieldset>
-                <label>First Name</label>
-                <input name='first_name' type='first_name' value={formState.first_name} onChange={handleChange}/>
-            </fieldset>
-            <input type='submit' value='Sign Up' />
-        </form>
+        <div className="Form">
+            <div className="flex items-center justify-center">
+                <div className="w-full max-w-md">
+                    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
+                        Machi Ramen Sign Up
+                    </div>
+                    <div className="mb-4">
+                        <fieldset>
+                            <label className="block text-gray-700 text-sm font-normal mb-2" htmlFor="username">Email</label>
+                            <input name='email' type='text' value={formState.email} onChange={handleChange} className="shadow 
+                                appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                name="email"
+                                v-model="form.email"
+                                type="email"
+                                required
+                                autoFocus
+                                placeholder="Email"/>
+                        </fieldset>
+                    </div>
+                    <div className="mb-6">
+                        <fieldset>
+                            <label className="block text-gray-700 text-sm font-normal mb-2" htmlFor="password" >Password</label>
+                            <input name='password' type='password' value={formState.password} onChange={handleChange} className="shadow 
+                                appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="Password"/>
+                        </fieldset>   
+                    </div>   
+                    <div className="mb-6">    
+                        <fieldset>
+                            <label className="block text-gray-700 text-sm font-normal mb-2" htmlFor="name">First Name</label>
+                            <input name='first_name' type='first_name' value={formState.first_name} onChange={handleChange} className="shadow 
+                                appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="First Name"/>
+                        </fieldset>
+                        <div className="button">
+                            <button className="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Sign Up</button>
+                        </div>
+                    </div>  
+                    </form>
+                    <p className="text-center text-gray-500 text-xs">
+                        &copy;2021 Machi Ramen. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
     );
 }
 
