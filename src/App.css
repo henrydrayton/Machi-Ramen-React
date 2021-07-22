@@ -77,3 +77,7 @@ p{
 .content-wrap{
   flex:1;
 }
+
+.logo {
+  width: 5%;
+}
