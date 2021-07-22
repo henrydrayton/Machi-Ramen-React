@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {signIn} from '../api/auth';
 import {useGlobalState} from '../utils/stateContext';
 import { useHistory } from 'react-router-dom';
-import './SignIn.css'
+import './SignInForm.css'
 
 function SignInForm() {
 	const {dispatch} = useGlobalState()

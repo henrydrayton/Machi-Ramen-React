@@ -26,6 +26,7 @@ function Navv() {
             <ul className="nav-links">
                 <li><Link to='/home'>HOME</Link></li>
                 <li><Link to='/menu'>MENU</Link></li>
+                <li><Link to='/about'>ABOUT</Link></li>
                 <li><Link to='/contact'>CONTACT US</Link></li>
                 {loggedInUser === "admin@admin.com" && 
                     <li><Link to='/items/new'>ADD MENU ITEM</Link></li>
