@@ -5,20 +5,22 @@ import './Contact.css'
 function Contact() {
     return (
         <div>
-            <div>
+            <div className= "touch">
                 <h1>Get In Touch</h1>
             </div>
             <div className="info">
                 <div>
-                    <h4>Phone Number</h4>
+                    <h3>Phone Number</h3>
                     <p>1234567890</p>
                 </div>
+                <br></br>
                 <div>
-                    <h4>Email</h4>
+                    <h3>Email</h3>
                     <p>test@test.com</p>
                 </div>
+                <br></br>
                  <div>
-                    <h4>Address</h4>
+                    <h3>Address</h3>
                     <p>123 Street, Ultimo</p>
                 </div>
             </div>

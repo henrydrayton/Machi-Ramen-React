@@ -1,3 +1,16 @@
 .info{
     text-align: right;
+    margin-right: 10%;
+    /* margin-top: 5%; */
+    font-size: 20px;
+  
+    
+}
+
+.touch{
+    text-align: left;
+    margin-right: 90%;
+    margin-left: 10%;
+    display: flex;
+    margin-top: 5%;
 }
