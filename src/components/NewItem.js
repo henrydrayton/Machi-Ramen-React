@@ -72,22 +72,50 @@ export default function NewItem() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Category:</label>
-            <select name='category_id' value={formState.category_id} onChange={handleChange}>
-                {categories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
-            </select>
-            <br/>
-            <label>Name:</label>
-            <input type='text' name='name' value={formState.name} onChange={handleChange}></input>
-            <br/>
-            <label>Price:</label>
-            <input type="number" min="0.5" step="any" name='price' value={formState.price} onChange={handleChange}></input>
-            <br/>
-            <label>Description:</label>
-            <input type='text' name='description' value={formState.description} onChange={handleChange}></input>
-            <br/>
-            <input type='submit' value={id ? 'Update' : 'Create'}/>
-        </form>
+        <div className="Form">
+            <div className="flex items-center justify-center">
+                <div className="w-full max-w-md">
+                    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
+                            New Item
+                        </div>
+                        <div className="mb-6">
+                            <label>Category:</label>
+                            <select name='category_id' value={formState.category_id} onChange={handleChange}>
+                                {categories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
+                            </select>
+                        </div>
+                        <br/>
+                        <div className="mb-6">
+                            <label className="block text-gray-700 text-sm font-normal mb-2">Name:</label>
+                            <input type='text' name='name' value={formState.name} onChange={handleChange} className="shadow 
+                                    appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    placeholder="Name"></input>
+                        </div>
+                        <br/>
+                        <div className="mb-6">
+                            <label className="block text-gray-700 text-sm font-normal mb-2">Price:</label>
+                            <input type="number" min="0.5" step="any" name='price' value={formState.price} onChange={handleChange} className="shadow 
+                                    appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    placeholder="Price"></input>
+                        </div>
+                        <br/>
+                        <div className="mb-6">
+                            <label className="block text-gray-700 text-sm font-normal mb-2">Description:</label>
+                            <input type='text' name='description' value={formState.description} onChange={handleChange} className="shadow 
+                                    appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    placeholder="Description"></input>
+                        </div>
+                        <br/>
+                        <div className="button">
+                            <button value={id ? 'Update' : 'Create'} className="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Submit</button>
+                        </div>
+                    </form>
+                    <p className="text-center text-gray-500 text-xs">
+                        &copy;2021 Machi Ramen. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
     )
 }
