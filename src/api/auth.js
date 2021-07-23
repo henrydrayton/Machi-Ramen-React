@@ -1,4 +1,4 @@
-export const API_URL = process.env.REACT_APP_API_URL
+export const API_URL = "https://machi-ramen.herokuapp.com"
 
 export async function signIn({email, password}) {
     const url = `${API_URL}/users/sign_in`
