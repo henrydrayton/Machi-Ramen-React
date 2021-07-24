@@ -54,20 +54,20 @@ export default function NewItem() {
             updateItem({id: id, ...formState})
             .then((res) => {
                 if (res.ok) {
-                    dispatch({type: "updateItem", data: {id: id, ...formState}})
-                    history.push(`/items/${id}`)
                     return res.json();
                 } else {
                     return res.text().then((text) => Promise.reject(text));
                 }
               })
-            // .then((json) => console.log(json))
+            .then((data) => {
+                dispatch({type: "updateItem", data: {id: id, ...data}})
+                history.push(`/items/${id}`)
+            })
             .catch((err) => console.error(err))
         } else {
 			createItem({...formState})
             .then((res) => {
                 if (res.ok) {
-                    history.push('/menu')
                     return res.json();
                 } else {
                     return res.text().then((text) => Promise.reject(text));
@@ -75,6 +75,7 @@ export default function NewItem() {
             })
             .then((json) => {
                 dispatch({type: "addItem", data: json})
+                history.push('/menu')
             })
             .catch((err) => console.error(err))
 		}
