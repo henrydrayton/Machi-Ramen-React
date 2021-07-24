@@ -12,12 +12,14 @@ function Menu() {
 	const {items} = store
 
 	return  (
-
-// This boolean operator checks whether items are present to getByDisplayValue. 
+		
+	
+// Thit is boolean operator checks whether items are present to getByDisplayValue. 
 // If there are no items to display, the function will return 'Loading...'
 	
 			items ?
 			(
+
 				<table>
 					<thead>
 						<tr>
