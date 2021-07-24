@@ -29,7 +29,7 @@ function Menu() {
 											<div className="flex items-center">
 												<h2><Link to={`/items/${item.id}`} className="text-xl text-gray-800 font-medium mr-auto">{item.name}</Link></h2>
 												<div className="price">
-												<p className="text-gray-800 font-semi tracking-tighter">Price: {item.price}</p>
+													<p className="text-gray-800 font-semi tracking-tighter">${item.price}</p>
 												</div>
 											</div>
 											<p className=" description text-sm text-gray-700 mt-4">{item.description}</p>
