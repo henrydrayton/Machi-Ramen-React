@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {useParams,useHistory} from 'react-router-dom'
 import {useGlobalState} from '../utils/stateContext'
 import {getItem, deleteItem} from '../api/itemServices'
+import './Menu.css'
 
 // The ItemDetails component is used to display an individual item on the menu when a user clicks on it.
 // The information is fetched from the Rails API which is linked on the ItemServices component a child of Auth.
@@ -35,25 +36,38 @@ function ItemDetails() {
 
     return (
 		<div>
-			<p>Category: {item.category_id}</p>
-			<p>Name: {item.name}</p>			
-			<p>Price: {item.price}</p>
-			<p>Description: {item.description}</p>
-			<img src={item.image_url} alt="food"/>			
-			<p>Description: {item.description}</p>		
+			<div class="md:flex shadow-lg  mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64">
+				<img src={item.image_url} class="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" alt="food"/>	
+				<div class="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
+					{/* <p>Category: {item.category_id}</p> */}
+					<div class="flex items-center">
+						<h2 class="text-xl text-gray-800 font-medium mr-auto">{item.name}</h2>			
+						<p class="text-gray-800 font-semi tracking-tighter">${item.price}</p>
+					</div>
+						<p class="description text-sm text-gray-700 mt-4">Description: {item.description}</p>
+
 
 {/* If the user's email matches the admin email they will be able update and delete menu items. 
 The update function loads the items previous params with an option to change.
 The delete function completely removes the item from the menu.  */}
-		
-			{loggedInUser === "admin@admin.com" &&
-				<div>
-					<Link to={`/items/${item.id}/update`}>Update</Link>
-					<Link to='/menu' onClick={handleDelete}>Delete</Link>
-				</div>
-            }
-		</div>
+				
+						{loggedInUser === "admin@admin.com" &&
+						<div className="button">
+							<div class="flex items-center justify-end mt-4 top-auto">
+								<Link to='/menu' onClick={handleDelete} class="bg-gray-100 text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</Link>
+								<Link to={`/items/${item.id}/update`} class=" bg-blue-600 text-gray-50 px-2 py-2 rounded-md ">Update</Link>
+							</div>
+						</div>
+				}
+				</div>	
+			</div>	
+			</div>
 	)
 }
-
 export default ItemDetails;
+
+
+		
+		
+
+

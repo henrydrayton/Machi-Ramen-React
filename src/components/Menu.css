@@ -14,3 +14,20 @@ th{
     font-size: 25px;
     color: #1A535C;
 }
+
+.price {
+    margin-left: 30%;
+}
+
+.description {
+    text-align: left;
+}
+
+.card-container {
+   flex-direction: row;
+ 
+}
+
+.title {
+    padding-top: 2%;
+}

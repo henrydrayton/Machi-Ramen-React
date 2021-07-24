@@ -56,7 +56,7 @@ If they click on the Sign Out tab the handleSignOut method is called.  */}
                 :
 // If signed out, the nav bar will render 'LOG IN' and 'SIGN UP'
                     <>
-                    <li><Link to='/signin'>LOG IN</Link></li>
+                    <li><Link to='/signin'>LOGIN</Link></li>
                     <li><Link to='/signup'>SIGN UP</Link></li>
                     </>
                 }

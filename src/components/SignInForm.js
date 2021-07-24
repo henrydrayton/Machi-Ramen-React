@@ -4,6 +4,8 @@ import {useGlobalState} from '../utils/stateContext';
 import { useHistory } from 'react-router-dom';
 import './SignInForm.css'
 
+// The SignInForm function sets the initialFormState of email and password to ''.
+
 function SignInForm() {
 	const {dispatch} = useGlobalState()
     let history = useHistory()
@@ -13,6 +15,8 @@ function SignInForm() {
 		password: ''
 	}
 	const [formState, setFormState] = useState(initialFormState)
+
+
     
     function handleChange(event) {
 		setFormState({
@@ -49,7 +53,7 @@ function SignInForm() {
             <div className="w-full max-w-md">
                 <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
                 <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
-                    Machi Ramen Log In
+                    Machi Ramen Login
                 </div>
                 <div className="mb-4">
                     <fieldset>
