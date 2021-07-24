@@ -4,9 +4,10 @@ import {useGlobalState} from '../utils/stateContext'
 import {useHistory} from 'react-router'
 import './SignInForm.css'
 
-
+// Render sign up form and handle user sign up
 function SignUpForm() {
 	const {dispatch} = useGlobalState()
+    // useHistory is used to redirection
     let history = useHistory()
     
     const initialFormState = {

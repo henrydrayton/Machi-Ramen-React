@@ -81,6 +81,14 @@ export default function NewItem() {
 		}
     }
 
+    // Conditional Rendering title. If id exists in the parammeter, the title is "update item".
+    // If not, the title is "New Item"
+    let title
+    if (id) {
+        title = "Update Item"
+    } else {
+        title = "New Item"
+    }
 
     return (
         <div className="Form">
@@ -88,7 +96,7 @@ export default function NewItem() {
                 <div className="w-full max-w-md">
                     <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
-                            New Item
+                            {title}
                         </div>
                         <div className="mb-6">
                             <label>Category:</label>
