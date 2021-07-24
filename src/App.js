@@ -32,7 +32,9 @@ function App() {
 
   useEffect(() => {
 		getItems()
-		.then((items) => dispatch({type: 'setItems', data: items}))
+		.then((items) => {
+      dispatch({type: 'setItems', data: items}
+    )})
 		.catch((error) => console.log(error))
 		getCategories()
 		.then(categories => dispatch({type: 'setCategories', data: categories}))
