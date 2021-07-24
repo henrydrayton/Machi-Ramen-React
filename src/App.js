@@ -1,5 +1,4 @@
 import React, { useState, useEffect , useReducer} from 'react';
-
 import Navv from './components/Navv'
 import About from './components/About'
 import Home from './components/Home'

@@ -1,6 +1,11 @@
 import React from 'react'
 import './About.css'
 
+// This page is purely used to render text and images on the About page.
+// The images are linked from the public images folder. 
+// Each text item is held within a container for styling purposes. 
+// The styling is held within a separate About.css file which has been imported. 
+
 
 function About() {
     return (

@@ -2,6 +2,10 @@ import React from 'react'
 import './Contact.css'
 
 
+// This page is purely used to render text on the Contact page.
+// The text is held within a container for styling purposes. 
+// The styling is held within a separate Contact.css file which has been imported. 
+
 function Contact() {
     return (
         <div>
