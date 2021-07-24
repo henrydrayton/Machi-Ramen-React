@@ -14,7 +14,9 @@ function ItemDetails() {
 
     useEffect(() => {
 		getItem(id)
-		.then((item) => setItem(item))
+		.then((item) => {
+			setItem(item)
+		})
 		.catch((error) => console.log(error))
 	},[id])
 
@@ -27,13 +29,15 @@ function ItemDetails() {
 			history.push('/menu')
 		})
 	}
+	console.log(item)
 	
     return (
 		<div>
 			<p>Category: {item.category_id}</p>
 			<p>Name: {item.name}</p>			
 			<p>Price: {item.price}</p>
-			<p>Description: {item.description}</p>			
+			<p>Description: {item.description}</p>
+			<img src={item.image_url} alt="food"/>			
 			{loggedInUser === "admin@admin.com" &&
 				<div>
 					<Link to={`/items/${item.id}/update`}>Update</Link>

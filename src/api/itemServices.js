@@ -9,7 +9,6 @@ export async function getItems() {
         },
     })
     return response.json()
-	// return Promise.resolve(items)
 }
 export async function getItem(id) {
     const url = `${API_URL}/items/${id}`
@@ -35,34 +34,39 @@ export async function deleteItem(id) {
 	return response
 }
 
-export async function createItem({ category_id, name, description, price }){
+export async function createItem(item){
     const token = localStorage.getItem('session_token')
     const url = `${API_URL}/items`
+    const formData = new FormData()
+    Object.keys(item).map(k => {
+        return formData.set(k, item[k])
+    })
 	const response = await fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': `${token}`
         },
-        // mode: 'cors',
         cache: 'no-cache',
-        body: JSON.stringify({ item: { category_id, name, description, price } })
+        body: formData
     })
 	return response
 }
 
-export async function updateItem({id, category_id, name, description, price }){
+export async function updateItem(item){
     const token = localStorage.getItem('session_token')
-    const url = `${API_URL}/items/${id}`
+    const url = `${API_URL}/items/${item.id}`
+    const formData = new FormData()
+    Object.keys(item).map(k => {
+        return formData.set(k, item[k])
+    })
 	const response = await fetch(url, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': `${token}`
         },
         mode: 'cors',
         cache: 'no-cache',
-        body: JSON.stringify({ item: { category_id, name, description, price } })
+        body: formData
     })
 	return response
 }

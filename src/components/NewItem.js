@@ -8,7 +8,8 @@ export default function NewItem() {
 		category_id: 1,
 		name: '',
         price: '',
-        description: ''
+        description: '',
+        image: null
 	}
 	const [formState,setFormState] = useState(initialFormState)
 
@@ -24,6 +25,13 @@ export default function NewItem() {
 		})
 	}
 
+    function fileSelectedHandler(event) {
+        setFormState({
+            ...formState,
+            image: event.target.files[0]
+        })
+    }
+
     useEffect(() => {
 		if(id) {
 			getItem(id)
@@ -33,7 +41,8 @@ export default function NewItem() {
 					category_id: category.id,
 					name: item.name,
                     price: item.price,
-                    description: item.description
+                    description: item.description,
+                    image: item.image_url
 				})
 			})
 		}
@@ -71,6 +80,7 @@ export default function NewItem() {
 		}
     }
 
+
     return (
         <div className="Form">
             <div className="flex items-center justify-center">
@@ -107,6 +117,11 @@ export default function NewItem() {
                                     placeholder="Description"></input>
                         </div>
                         <br/>
+                        <div className="mb-6">
+                            <label htmlFor="image" className="block text-gray-700 text-sm font-normal mb-2">Upload Image:</label>
+                            <input type="file" name="image" accept="image/*" onChange={fileSelectedHandler}/>
+                        </div>
+
                         <div className="button">
                             <button value={id ? 'Update' : 'Create'} className="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Submit</button>
                         </div>
