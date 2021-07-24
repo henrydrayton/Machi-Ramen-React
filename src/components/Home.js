@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 import './Home.css'
 
+// This page is purely used to render text and images on the Home page.
+// The images are linked from the public images folder. 
+// Each text item is held within a container for styling purposes. 
+// The styling is held within a separate Home.css file which has been imported. 
+
+
 
 const buttonStyle = {
    

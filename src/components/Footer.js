@@ -1,6 +1,13 @@
 import React from 'react'
 import './Footer.css'
 
+
+// This footer component is used throughout the entire application. 
+// Although it serves limited functionality in this demonstration application. 
+// In a real world scenario it would provide links to pages such as FAQ's, Terms and Conditions and Privacy statements. 
+// The styling is held within a separate Footer.css file which has been imported. 
+
+
 function Footer() {
   return (
     <div className="main-footer">
@@ -46,6 +53,8 @@ function Footer() {
         <hr />
             <div className="row">
                 <p className="col-sm">
+{/* This method retrieves the current year and creates a string interpolation. 
+This means that the website's Terms of Service and Privacy statements will remain current each year. */}
                     &copy;{new Date().getFullYear()} MACHI RAMEN | All rights reserved |
                     Terms Of Service | Privacy
                 </p>
