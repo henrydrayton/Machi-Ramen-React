@@ -5,12 +5,14 @@ import { StateContext } from '../utils/stateContext'
 import {getItem, deleteItem} from '../api/itemServices'
 import ItemDetails from './ItemDetails'
 
+// mock file ../api/itemServices
 jest.mock('../api/itemServices', () => ({
     getItem: jest.fn(),
     deleteItem: jest.fn()
 }))
 
 describe('ItemDetails', () => {
+    // clear returned value of the getItem, deleteItem
     beforeEach(() => {
         jest.clearAllMocks()
     })
@@ -45,11 +47,10 @@ describe('ItemDetails', () => {
                 </StaticRouter>
             </StateContext.Provider>
         )
-        await findByText(/Name: nameA/i)
+        await findByText(/nameA/i)
 
-        expect(getByText(/Category: categoryA/i)).toBeInTheDocument()
-        expect(getByText(/Name: nameA/i)).toBeInTheDocument()
-        expect(getByText(/Price: 50/i)).toBeInTheDocument()
+        expect(getByText(/nameA/i)).toBeInTheDocument()
+        expect(getByText(/50/i)).toBeInTheDocument()
         expect(getByText(/Description: descriptionA/i)).toBeInTheDocument()
     })
 
@@ -69,7 +70,7 @@ describe('ItemDetails', () => {
                 </StaticRouter>
             </StateContext.Provider>
         )
-        await findByText(/Name: nameA/i)
+        await findByText(/nameA/i)
         
         expect(queryByRole('link')).toBeNull()
     })
@@ -90,8 +91,8 @@ describe('ItemDetails', () => {
                 </StaticRouter>
             </StateContext.Provider>
         )
-        await findByText(/Name: nameA/i)
-        const [ itemUpdate, menu ] = queryAllByRole('link')
+        await findByText(/nameA/i)
+        const [ menu, itemUpdate ] = queryAllByRole('link')
 
         expect(itemUpdate).toHaveAttribute('href', '/items/itemA/update')
         expect(menu).toHaveAttribute('href', '/menu')
@@ -114,7 +115,7 @@ describe('ItemDetails', () => {
                 </StaticRouter>
             </StateContext.Provider>
         )
-        await findByText(/Name: nameA/i)
+        await findByText(/nameA/i)
         fireEvent.click(getByText(/delete/i))
 
         expect(deleteItem).toBeCalled()

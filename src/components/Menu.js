@@ -23,7 +23,7 @@ function Menu() {
 	// If there are no items to display, the function will return 'Loading...'
 	// iterates over each item in the database and displays its individual attribute
 
-			items.length ?
+			items && items.length ?
 			(
 					<div>
 						<h1 className="title">Menu</h1>
