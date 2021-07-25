@@ -26,8 +26,8 @@ function SignInForm() {
 		})
 	}
 
-    // use callback function signIn to send signin input to the server to check, 
-    // it returns a Promise so we need to catch the response and save to Global state if sucessful or throw an error if unsuccessful
+    // use callback function signIn to send sign in input to the server to check, 
+    // it returns a Promise so we need to catch the response and save to Global state if successful or throw an error if unsuccessful
     function handleSubmit(event) {
         event.preventDefault();
         signIn(formState)

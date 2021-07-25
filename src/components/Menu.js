@@ -4,11 +4,19 @@ import {Link} from 'react-router-dom'
 import {useGlobalState} from '../utils/stateContext'
 import './Menu.css'
 
+// function shortString() {
+// 	var length = 100;
+// 	var myString = item.description;
+// 	var myTruncatedString = myString.substring(0,length);
+// }
+
+
 
 function Menu() {
 	// takes items out of the global state to use
     const {store} = useGlobalState()
 	const {items} = store
+
 
 	return  (
 	// This boolean operator checks whether items are present. 
