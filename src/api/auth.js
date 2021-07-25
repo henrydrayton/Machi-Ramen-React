@@ -81,7 +81,9 @@ export function checkTimeLocalStorage() {
     let setupTime = localStorage.getItem('setupTime');
     if (setupTime) {
       if((now-setupTime) > hours*60*60*1000) {
-        localStorage.clear()
+        localStorage.removeItem('email');
+        localStorage.removeItem('session_token');
+        localStorage.removeItem('setupTime');
       }
     }
 }
