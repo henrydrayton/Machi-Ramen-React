@@ -4,12 +4,13 @@ import {useGlobalState} from '../utils/stateContext';
 import { useHistory } from 'react-router-dom';
 import './SignInForm.css'
 
-// The SignInForm function sets the initialFormState of email and password to ''.
+// render signin form and handle the input
 
 function SignInForm() {
 	const {dispatch} = useGlobalState()
     let history = useHistory()
 
+    // set initialFormState to empty string
     const initialFormState = {
 		email: '',
 		password: ''
@@ -17,7 +18,7 @@ function SignInForm() {
 	const [formState, setFormState] = useState(initialFormState)
 
 
-    
+    // handle the input value change
     function handleChange(event) {
 		setFormState({
 			...formState,
@@ -25,6 +26,8 @@ function SignInForm() {
 		})
 	}
 
+    // use callback function signIn to send signin input to the server to check, 
+    // it returns a Promise so we need to catch the response and save to Global state if sucessful or throw an error if unsuccessful
     function handleSubmit(event) {
         event.preventDefault();
         signIn(formState)
@@ -58,7 +61,7 @@ function SignInForm() {
                 <div className="mb-4">
                     <fieldset>
                         <label className="block text-gray-700 text-sm font-normal mb-2" htmlFor="username" >Email</label>
-                        <input name='email' type='text' value={formState.email} onChange={handleChange} className="shadow 
+                        <input value={formState.email} onChange={handleChange} className="shadow 
                             appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             name="email"
                             v-model="form.email"
@@ -71,7 +74,7 @@ function SignInForm() {
                 <div className="mb-6">
                     <fieldset>
                         <label  className="block text-gray-700 text-sm font-normal mb-2" htmlFor="password" >Password</label>
-                        <input name='password' type='password' value={formState.password} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        <input value={formState.password} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             v-model="form.password"
                             type="password"
                             placeholder="Password"

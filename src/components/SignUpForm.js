@@ -7,7 +7,8 @@ import './SignInForm.css'
 // Render sign up form and handle user sign up
 function SignUpForm() {
 	const {dispatch} = useGlobalState()
-    // useHistory is used to redirection
+
+    // useHistory is used for redirection after user logout
     let history = useHistory()
     
     const initialFormState = {
@@ -17,6 +18,7 @@ function SignUpForm() {
 	}
 	const [formState, setFormState] = useState(initialFormState)
     
+    // handle input value change
     function handleChange(event) {
 		setFormState({
 			...formState,
@@ -24,6 +26,8 @@ function SignUpForm() {
 		})
 	}
 
+    // When user click submit, the callback function signUp will be called to send input data to server.
+    // it returns a Promise, so we need to catch the response.
     function handleSubmit(event) {
         event.preventDefault();
         signUp(formState)
@@ -57,7 +61,7 @@ function SignUpForm() {
                     <div className="mb-4">
                         <fieldset>
                             <label className="block text-gray-700 text-sm font-normal mb-2" htmlFor="username">Email</label>
-                            <input name='email' type='text' value={formState.email} onChange={handleChange} className="shadow 
+                            <input value={formState.email} onChange={handleChange} className="shadow 
                                 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 name="email"
                                 v-model="form.email"

@@ -3,7 +3,9 @@ import {useHistory, useParams} from 'react-router-dom'
 import { createItem, getItem, updateItem } from '../api/itemServices'
 import { useGlobalState } from '../utils/stateContext'
 
+// render form to create a new item or update an item, then handle the input.
 export default function NewItem() {
+    // set initialFormState
     const initialFormState = {
 		category_id: 1,
 		name: '',
@@ -18,6 +20,7 @@ export default function NewItem() {
 	const {dispatch, store} = useGlobalState()
 	const {categories} = store;
 
+    // handle input change (name, price, description)
     function handleChange(event) {
 		setFormState({
 			...formState,
@@ -25,6 +28,7 @@ export default function NewItem() {
 		})
 	}
 
+    // handle the file chosen to upload
     function fileSelectedHandler(event) {
         setFormState({
             ...formState,
@@ -32,6 +36,8 @@ export default function NewItem() {
         })
     }
 
+    // if item id exists, it indicates that admin wants to update item. 
+    // useEffect will help to populate the input with existing attributes of the item
     useEffect(() => {
 		if(id) {
 			getItem(id)
@@ -48,6 +54,9 @@ export default function NewItem() {
 		}
 	},[id, categories])
 
+    // function handleSubmit summons either the callback function updateItem (if item id exists) or createItem
+    // The response is a Promise so we need to catch the response. 
+    // If successful response, new item/ updated item will be recorded in global state
     function handleSubmit(event) {
         event.preventDefault()
         if (id) {
