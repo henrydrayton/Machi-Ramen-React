@@ -6,7 +6,7 @@ import Menu from './components/Menu'
 import Contact from './components/Contact'
 import SignInForm from './components/SignInForm';
 import SignUpForm from './components/SignUpForm';
-import { getToken, signOut } from './api/auth'
+import { getToken, signOut, checkTimeLocalStorage } from './api/auth'
 import Footer from './components/Footer'
 import './App.css'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
@@ -39,6 +39,9 @@ function App() {
 		.then(categories => dispatch({type: 'setCategories', data: categories}))
 		.catch((error) => console.log(error))
 	},[])
+
+  // clear user session in localStorage if jwt token has expired
+  checkTimeLocalStorage()
    
   return (
     <div className="page-container">
