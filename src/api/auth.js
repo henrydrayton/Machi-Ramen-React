@@ -65,3 +65,23 @@ export function signOut() {
 export function getToken() {
     return localStorage.getItem('session_token');
 }
+
+// setTime in local storage when signin/signup 
+// so we can set up a method to clear storage after 24h when the JWT token has expired
+export function setTimeLocalStorage() {
+    let now = new Date().getTime();
+    localStorage.setItem('setupTime', now) 
+}
+
+// clear localstorage after 24h (when the JWT token expired)
+export function checkTimeLocalStorage() {
+    const hours = 24; // to clear the localStorage after 24 hours
+    // const hours = 0.1; // to clear the localStorage after 0.1 hours
+    let now = new Date().getTime();
+    let setupTime = localStorage.getItem('setupTime');
+    if (setupTime) {
+      if((now-setupTime) > hours*60*60*1000) {
+        localStorage.clear()
+      }
+    }
+}

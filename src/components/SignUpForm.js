@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {signUp} from '../api/auth'
+import {signUp, setTimeLocalStorage} from '../api/auth'
 import {useGlobalState} from '../utils/stateContext'
 import {useHistory} from 'react-router'
 import './SignInForm.css'
@@ -36,6 +36,7 @@ function SignUpForm() {
                 history.push(`/home`)
                 const token = resp.headers.get("Authorization");
                 localStorage.setItem('session_token', token);
+                setTimeLocalStorage()
                 dispatch({type: 'setToken', data: token})
                 return resp.json();
                 } else {
