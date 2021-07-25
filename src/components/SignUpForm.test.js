@@ -17,7 +17,7 @@ describe('SignUpForm', () => {
     }
 
     it('should display text input form', () => {
-        const { getByText } = render(
+        const { getByText, getByRole } = render(
             <StateContext.Provider value={{ form: { user: undefined } }}>
                 <StaticRouter>
                     <SignUpForm />
@@ -28,7 +28,6 @@ describe('SignUpForm', () => {
         expect(getByText(/email/i)).toBeInTheDocument();
         expect(getByText(/password/i)).toBeInTheDocument()
         expect(getByText(/first name/i)).toBeInTheDocument()
-        expect(getByText(/sign up/i)).toBeInTheDocument();
-
+        expect(getByRole('button')).toHaveTextContent('Sign Up')
     })
 })

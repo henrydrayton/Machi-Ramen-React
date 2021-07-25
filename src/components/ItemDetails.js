@@ -40,15 +40,15 @@ function ItemDetails() {
 
     return (
 		<div>
-			<div class="md:flex shadow-lg  mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64">
-				<img src={item.image_url} class="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" alt="food"/>	
-				<div class="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
+			<div className="md:flex shadow-lg  mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64">
+				<img src={item.image_url} className="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" alt="food"/>	
+				<div className="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
 					{/* <p>Category: {item.category_id}</p> */}
-					<div class="flex items-center">
-						<h2 class="text-xl text-gray-800 font-medium mr-auto">{item.name}</h2>			
-						<p class="text-gray-800 font-semi tracking-tighter">${item.price}</p>
+					<div className="flex items-center">
+						<h2 className="text-xl text-gray-800 font-medium mr-auto">{item.name}</h2>			
+						<p className="text-gray-800 font-semi tracking-tighter">${item.price}</p>
 					</div>
-						<p class="description text-sm text-gray-700 mt-4">Description: {item.description}</p>
+						<p className="description text-sm text-gray-700 mt-4">Description: {item.description}</p>
 
 
 {/* If the user's email matches the admin email they will be able update and delete menu items. 
@@ -57,9 +57,9 @@ The delete function completely removes the item from the menu.  */}
 				
 						{loggedInUser === "admin@admin.com" &&
 						<div className="button">
-							<div class="flex items-center justify-end mt-4 top-auto">
-								<Link to='/menu' onClick={handleDelete} class="bg-gray-100 text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</Link>
-								<Link to={`/items/${item.id}/update`} class=" bg-blue-600 text-gray-50 px-2 py-2 rounded-md ">Update</Link>
+							<div className="flex items-center justify-end mt-4 top-auto">
+								<Link to='/menu' onClick={handleDelete} className="bg-gray-100 text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</Link>
+								<Link to={`/items/${item.id}/update`} className=" bg-blue-600 text-gray-50 px-2 py-2 rounded-md ">Update</Link>
 							</div>
 						</div>
 				}
