@@ -3,7 +3,9 @@ import {useHistory, useParams} from 'react-router-dom'
 import { createItem, getItem, updateItem } from '../api/itemServices'
 import { useGlobalState } from '../utils/stateContext'
 
+// render form to create a new item or update an item, then handle the input.
 export default function NewItem() {
+    // set initialFormState
     const initialFormState = {
 		category_id: 1,
 		name: '',
@@ -18,6 +20,7 @@ export default function NewItem() {
 	const {dispatch, store} = useGlobalState()
 	const {categories} = store;
 
+    // handle input change (name, price, description)
     function handleChange(event) {
 		setFormState({
 			...formState,
@@ -25,6 +28,7 @@ export default function NewItem() {
 		})
 	}
 
+    // handle the file chosen to upload
     function fileSelectedHandler(event) {
         setFormState({
             ...formState,
@@ -32,6 +36,8 @@ export default function NewItem() {
         })
     }
 
+    // if item id exists, it indicates that admin wants to update item. 
+    // useEffect will help to populate the input with existing attributes of the item
     useEffect(() => {
 		if(id) {
 			getItem(id)
@@ -48,6 +54,9 @@ export default function NewItem() {
 		}
 	},[id, categories])
 
+    // function handleSubmit summons either the callback function updateItem (if item id exists) or createItem
+    // The response is a Promise so we need to catch the response. 
+    // If successful response, new item/ updated item will be recorded in global state
     function handleSubmit(event) {
         event.preventDefault()
         if (id) {
@@ -81,6 +90,14 @@ export default function NewItem() {
 		}
     }
 
+    // Conditional Rendering title. If id exists in the parammeter, the title is "update item".
+    // If not, the title is "New Item"
+    let title
+    if (id) {
+        title = "Update Item"
+    } else {
+        title = "New Item"
+    }
 
     return (
         <div className="Form">
@@ -88,7 +105,7 @@ export default function NewItem() {
                 <div className="w-full max-w-md">
                     <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
-                            New Item
+                            {title}
                         </div>
                         <div className="mb-6">
                             <label>Category:</label>

@@ -16,6 +16,8 @@ function ItemDetails() {
 
 	let history = useHistory()
 
+	// use callback function getItem to get item details from the server. 
+	// it returns a Promise so we need to catch the response
     useEffect(() => {
 		getItem(id)
 		.then((item) => setItem(item))
@@ -24,6 +26,8 @@ function ItemDetails() {
 
     if (!item) return null
 
+	// when Admin click 'delete', callback function deleteItem is called.
+	// then delete item from global state, and redirect to menu page
 	function handleDelete() {
 		deleteItem(id)
 		.then(() => {
