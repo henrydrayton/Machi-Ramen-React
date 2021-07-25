@@ -21,7 +21,6 @@ export async function signIn({email, password}) {
 }
 
 
-
 export async function signUp({email, password, first_name}) {
     const url = `${API_URL}/users`;
 
