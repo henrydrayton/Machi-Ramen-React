@@ -2,12 +2,13 @@ import React from 'react'
 import { StaticRouter } from 'react-router-dom'
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import { StateContext } from '../utils/stateContext'
-import { signOut } from '../api/auth'
+import { checkTimeLocalStorage, signOut } from '../api/auth'
 import Nav from './Navv'
 
 // mock file ../api/itemServices
 jest.mock('../api/auth', () => ({
-    signOut: jest.fn()
+    signOut: jest.fn(),
+    checkTimeLocalStorage: jest.fn()
 }))
 
 describe('Nav', () => {
@@ -75,6 +76,7 @@ describe('Nav', () => {
 
         await waitFor(() => {
             expect(signOut).toHaveBeenCalled()
+            expect(checkTimeLocalStorage).toHaveBeenCalled()
             expect(dispatch).toHaveBeenCalledWith({type: 'setLoggedInUser', data: null})
             expect(dispatch).toHaveBeenCalledWith({type: 'setToken', data: null})
         })
