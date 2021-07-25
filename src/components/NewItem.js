@@ -20,6 +20,9 @@ export default function NewItem() {
 	const {dispatch, store} = useGlobalState()
 	const {categories} = store;
 
+    // set flash to show error message
+    const [flash, setFlash] = useState('');
+
     // handle input change (name, price, description)
     function handleChange(event) {
 		setFormState({
@@ -72,7 +75,7 @@ export default function NewItem() {
                 dispatch({type: "updateItem", data: {id: id, ...data}})
                 history.push(`/items/${id}`)
             })
-            .catch((err) => console.error(err))
+            .catch((e) =>{console.log(e); setFlash(e)})
         } else {
 			createItem({...formState})
             .then((res) => {
@@ -86,7 +89,7 @@ export default function NewItem() {
                 dispatch({type: "addItem", data: json})
                 history.push('/menu')
             })
-            .catch((err) => console.error(err))
+            .catch((e) =>{console.log(e); setFlash(e)})
 		}
     }
 
@@ -103,6 +106,7 @@ export default function NewItem() {
         <div className="Form">
             <div className="flex items-center justify-center">
                 <div className="w-full max-w-md">
+                    { flash && <div style={{ color: 'red' }}>{flash}</div> }
                     <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
                             {title}
