@@ -1,6 +1,9 @@
 export const API_URL = "https://machi-ramen.herokuapp.com"
 // export const API_URL = "http://localhost:3000"
 
+// signIn, signUp, singOut are callback functions which will be called later in SignInForm, SignUpForm, Navv
+// It will send the data input to the server.
+// An async await function. 
 
 export async function signIn({email, password}) {
     const url = `${API_URL}/users/sign_in`
@@ -16,6 +19,7 @@ export async function signIn({email, password}) {
     });
     return resp;
 }
+
 
 
 export async function signUp({email, password, first_name}) {
@@ -57,6 +61,7 @@ export function signOut() {
     })
 }
 
+// get Token from localStorage
 export function getToken() {
     return localStorage.getItem('session_token');
 }

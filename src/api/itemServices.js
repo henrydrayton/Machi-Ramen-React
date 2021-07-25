@@ -1,5 +1,6 @@
 import {API_URL} from './auth'
 
+// To GET menu items from server and catch the server response. 
 export async function getItems() {
 	const url = `${API_URL}/items`
     const response = await fetch(url, {
@@ -10,6 +11,10 @@ export async function getItems() {
     })
     return response.json()
 }
+
+
+// To GET a specific menu item from the server and catch the repsonse. 
+
 export async function getItem(id) {
     const url = `${API_URL}/items/${id}`
     const response = await fetch(url, {
@@ -20,6 +25,8 @@ export async function getItem(id) {
     })
     return response.json()
 }
+
+// To DELETE a specific menu item from the server 
 
 export async function deleteItem(id) {
     const token = localStorage.getItem('session_token')
@@ -33,6 +40,8 @@ export async function deleteItem(id) {
     })
 	return response
 }
+
+// To create a specific menu item to the server, fetch the response which includes item id
 
 export async function createItem(item){
     const token = localStorage.getItem('session_token')
@@ -51,6 +60,8 @@ export async function createItem(item){
     })
 	return response
 }
+
+// To update an already created specific menu item in the server 
 
 export async function updateItem(item){
     const token = localStorage.getItem('session_token')
