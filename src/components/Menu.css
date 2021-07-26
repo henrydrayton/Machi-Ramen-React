@@ -31,3 +31,36 @@ th{
 .title {
     padding-top: 2%;
 }
+
+
+.sub-head {
+    font-size: 39px;
+    padding-top: 2%;
+  }
+  
+  /* .card-container {
+    padding-bottom: 10%;
+    padding-top: 10%;
+  } */
+
+
+
+@media screen and (min-width: 701px) {
+    .card-container {
+        /* padding-bottom: 10%;
+        padding-top: 10%; */
+      }
+      
+    }
+  
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 700px) {
+    .card-container {
+        padding-bottom: 5%;
+        padding-top: 5%;
+      }
+       
+    }
+  
+  

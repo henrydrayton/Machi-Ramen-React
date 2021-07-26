@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import './Menu.css'
+
 
 export default function MenuCard ({items, title}) {
     return (

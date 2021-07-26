@@ -31,14 +31,15 @@ function Home() {
                     {/* <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">LEARN MORE</button> */}
                     </Link>
                 {/* </div> */}
-            </div>
+        </div>
             
-            {/* <div>
-                <h2 className="text padTop">Japanese Street Food Specalists</h2>
-                <p className="text">We are formed based on the philosophy of finding, 
-                    preserving and spreading original flavors to everyone.
-                </p>
-            </div> */}
+            
+       
+        
+        <h1 className="sub-head" >Japanese Street Food Specalists</h1>
+        <p>We are formed based on the philosophy of finding, 
+            preserving and spreading original flavors to everyone.
+        </p>
 
 
 {/* NEW CSS */}
