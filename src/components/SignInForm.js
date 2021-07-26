@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {signIn} from '../api/auth';
+import {signIn, setTimeLocalStorage} from '../api/auth';
 import {useGlobalState} from '../utils/stateContext';
 import { useHistory } from 'react-router-dom';
 import './SignInForm.css'
@@ -16,6 +16,9 @@ function SignInForm() {
 		password: ''
 	}
 	const [formState, setFormState] = useState(initialFormState)
+
+    // set flash to show error message
+    const [flash, setFlash] = useState('');
 
 
     // handle the input value change
@@ -36,10 +39,11 @@ function SignInForm() {
                 history.push(`/home`)
                 const token = resp.headers.get("Authorization");
                 localStorage.setItem('session_token', token);
+                setTimeLocalStorage();
                 dispatch({type: 'setToken', data: token})
                 return resp.json();
                 } else {
-                throw new Error(resp);
+                throw new Error("Invalid Email or Password");
                 }
             })
         .then((json) => {
@@ -47,13 +51,14 @@ function SignInForm() {
             localStorage.setItem('email', email);
             dispatch({type: 'setLoggedInUser', data: email});
         } )
-        .catch((err) => console.error(err));
+        .catch((e) => { setFlash(`${e.name}: ${e.message}`)})
     }
 
     return (
         <div className="Form">
         <div className="flex items-center justify-center">
             <div className="w-full max-w-md">
+                { flash && <div style={{ color: 'red' }}>{flash}</div> }
                 <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
                 <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
                     Machi Ramen Login

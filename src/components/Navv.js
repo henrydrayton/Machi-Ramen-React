@@ -1,5 +1,5 @@
 import React from 'react'
-import { signOut } from '../api/auth'
+import { signOut, checkTimeLocalStorage } from '../api/auth'
 import {useGlobalState} from '../utils/stateContext'
 import { Link } from 'react-router-dom' 
 import {useHistory} from 'react-router-dom'
@@ -19,12 +19,14 @@ function Navv() {
 //  null and they will then be redirected to the Home page.
 
     function handleSignOut(event) {
+        checkTimeLocalStorage()
 		event.preventDefault()
 		signOut(loggedInUser)
 		.then(() => {
-			dispatch({type: 'setLoggedInUser', data: null})
+            dispatch({type: 'setLoggedInUser', data: null})
 			dispatch({type: 'setToken', data: null})
 			history.push('/home')
+            localStorage.clear()
 		})
 	}
 

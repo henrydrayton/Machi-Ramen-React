@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {signUp} from '../api/auth'
+import {signUp, setTimeLocalStorage} from '../api/auth'
 import {useGlobalState} from '../utils/stateContext'
 import {useHistory} from 'react-router'
 import './SignInForm.css'
@@ -17,7 +17,10 @@ function SignUpForm() {
         first_name: ''
 	}
 	const [formState, setFormState] = useState(initialFormState)
-    
+        
+    // set flash to show error message
+    const [flash, setFlash] = useState('');
+
     // handle input value change
     function handleChange(event) {
 		setFormState({
@@ -36,24 +39,26 @@ function SignUpForm() {
                 history.push(`/home`)
                 const token = resp.headers.get("Authorization");
                 localStorage.setItem('session_token', token);
+                setTimeLocalStorage()
                 dispatch({type: 'setToken', data: token})
                 return resp.json();
-                } else {
-                throw new Error(resp);
-                }
+            } else {
+                throw new Error("Email already in use");
+            }
             })
         .then((json) => {
             const email = json.data.email;
             localStorage.setItem('email', email);
             dispatch({type: 'setLoggedInUser', data: email});
         } )
-        .catch((err) => console.error(err));
+        .catch((e) => { setFlash(`${e.name}: ${e.message}`)});
     }
 
     return (
         <div className="Form">
             <div className="flex items-center justify-center">
                 <div className="w-full max-w-md">
+                    { flash && <div style={{ color: 'red' }}>{flash}</div> }
                     <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
                         Machi Ramen Sign Up

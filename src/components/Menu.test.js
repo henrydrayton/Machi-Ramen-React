@@ -4,6 +4,7 @@ import { render } from '@testing-library/react'
 import { StateContext } from '../utils/stateContext'
 import Menu from './Menu'
 
+jest.mock('./MenuCard', () => (props) => <div>{props.title}</div>)
 
 // The describe feature is used to create dummy items that jest can test. 
 // In this case the items are itemA and itemB with corresponding values. 
@@ -13,14 +14,14 @@ describe('Menu', () => {
         items: [
             {
                 id: 'itemA',
-                category_id: 'categoryA',
+                category_id: 1,
                 name: 'nameA',
                 price: 50,
                 description: 'descriptionA'
             },
             {
                 id: 'itemB',
-                category_id: 'categoryB',
+                category_id: 2,
                 name: 'nameB',
                 price: 80,
                 description: 'descriptionB'
@@ -56,7 +57,8 @@ describe('Menu', () => {
             </StateContext.Provider>
         )
 
-        expect(getByText(/nameA/i)).toBeInTheDocument()
-        expect(getByText(/nameB/i)).toBeInTheDocument()
+        expect(getByText(/menu/i)).toBeInTheDocument()
+        expect(getByText(/starter/i)).toBeInTheDocument()
+        expect(getByText(/drink/i)).toBeInTheDocument()
     })
 })

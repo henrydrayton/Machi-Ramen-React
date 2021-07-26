@@ -18,23 +18,27 @@ function Home() {
     return (
         <div className="container-home">
             <div className="image">
-                <img src="/images/home.jpg" alt="homepage" className="home"/>
-                {/* <div className="text-wrapper"> */}
-                    <h1 className="text">Machi Ramen</h1>
-                    <p className="text">We are formed based on the philosophy of finding, preserving and spreading 
-                        original flavors to everyone.
-                    </p>
-                    <Link style={buttonStyle} to='/about'>
-                    <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">LEARN MORE</button>
+                <img src="/images/home.jpg" alt="homepage" />
+
+            <div className="text-span">
+                <h1 className="head">Machi Ramen</h1><br />
+                <p className="text">We are formed based on the philosophy of finding, preserving and spreading 
+                        original flavors to everyone.</p>
+            </div>      
+
+
+                    <Link style={buttonStyle} to='/about' className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"> LEARN MORE
+                    {/* <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">LEARN MORE</button> */}
                     </Link>
                 {/* </div> */}
-
-           
+            </div>
+            
+            {/* <div>
                 <h2 className="text padTop">Japanese Street Food Specalists</h2>
                 <p className="text">We are formed based on the philosophy of finding, 
                     preserving and spreading original flavors to everyone.
                 </p>
-            </div>
+            </div> */}
 
 
 {/* NEW CSS */}
