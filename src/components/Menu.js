@@ -31,10 +31,14 @@ function Menu() {
 		(
 			<div>
 				<h1 className="title">Menu</h1>
-				<MenuCard items={starter} title={"Starter"}/>
-				<MenuCard items={main} title={"Main"}/>
-				<MenuCard items={dessert} title={"Dessert"}/>
-				<MenuCard items={drink} title={"Drink"}/>
+				<h2 className="sub-head">Entrees</h2>
+				<MenuCard items={starter} title={""}/>
+				<h2 className="sub-head">Mains</h2>
+				<MenuCard items={main} title={""}/>
+				<h2 className="sub-head">Desserts</h2>
+				<MenuCard items={dessert} title={""}/>
+				<h2 className="sub-head">Drinks</h2>
+				<MenuCard items={drink} title={""}/>
 			</div>
 			
 		) : (
