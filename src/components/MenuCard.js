@@ -10,11 +10,13 @@ export default function MenuCard({ items, title }) {
           <div className="card-container">
             <div className="md:flex shadow-lg  mx-6 md:mx-auto my-20 max-w-lg md:max-w-2xl h-64">
               <p>
-                <img
-                  src={item.image_url}
-                  className="h-full w-full md:w-3/3  object-cover rounded-lg rounded-r-none pb-5/6"
-                  alt="food"
-                />
+                <Link to={`/items/${item.id}`}>
+                    <img
+                    src={item.image_url}
+                    className="h-full w-full md:w-3/3  object-cover rounded-lg rounded-r-none pb-5/6"
+                    alt="food"
+                    />
+                </Link>
               </p>
               <div className="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
                 <div className="flex items-center">
