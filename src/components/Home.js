@@ -17,28 +17,24 @@ const buttonStyle = {
 function Home() {
     return (
         <div className="container-home">
-            <div className="content-wrapper">
+            <div className="image">
                 <img src="/images/home.jpg" alt="homepage" className="home"/>
-                <div className="text-wrapper">
-                    <h1>Machi Ramen</h1>
-                    <p>We are formed based on the philosophy of finding, preserving and spreading 
+                {/* <div className="text-wrapper"> */}
+                    <h1 className="text">Machi Ramen</h1>
+                    <p className="text">We are formed based on the philosophy of finding, preserving and spreading 
                         original flavors to everyone.
                     </p>
                     <Link style={buttonStyle} to='/about'>
                     <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">LEARN MORE</button>
                     </Link>
-                </div>
-            </div>
+                {/* </div> */}
 
-            <div>
-                <h2 className="padTop">Japanese Street Food Specalists</h2>
-                <p>We are formed based on the philosophy of finding, 
+           
+                <h2 className="text padTop">Japanese Street Food Specalists</h2>
+                <p className="text">We are formed based on the philosophy of finding, 
                     preserving and spreading original flavors to everyone.
                 </p>
             </div>
-
-
-
 
 
 {/* NEW CSS */}

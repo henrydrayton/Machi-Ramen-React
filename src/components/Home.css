@@ -175,3 +175,16 @@
     flex-direction: row;
     justify-content: space-around;
   } */
+
+  .image { 
+    position: relative; 
+    width: 100%; /* for IE 6 */
+ }
+ 
+ .text { 
+    position: absolute; 
+    top: 200px; 
+    left: 0; 
+    width: 100%; 
+    color: white;
+ }

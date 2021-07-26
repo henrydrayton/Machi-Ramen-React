@@ -15,7 +15,7 @@ function Navv() {
 	const {loggedInUser} = store
 
 // This function is used to sign a user out.
-//  When a user clicks on the 'Sign Out' tab their session tokeen will be set to
+//  When a user clicks on the 'Sign Out' tab their session token will be set to
 //  null and they will then be redirected to the Home page.
 
     function handleSignOut(event) {
