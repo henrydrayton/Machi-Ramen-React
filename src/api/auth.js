@@ -1,5 +1,4 @@
 export const API_URL = "https://machi-ramen.herokuapp.com"
-// export const API_URL = "http://localhost:3000"
 
 // signIn, signUp, singOut are callback functions which will be called later in SignInForm, SignUpForm, Navv
 // It will send the data input to the server.
