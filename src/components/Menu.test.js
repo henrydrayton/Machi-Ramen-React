@@ -58,7 +58,7 @@ describe('Menu', () => {
         )
 
         expect(getByText(/menu/i)).toBeInTheDocument()
-        expect(getByText(/starter/i)).toBeInTheDocument()
+        expect(getByText(/entrees/i)).toBeInTheDocument()
         expect(getByText(/drink/i)).toBeInTheDocument()
     })
 })

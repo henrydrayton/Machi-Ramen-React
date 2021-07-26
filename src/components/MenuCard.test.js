@@ -17,11 +17,11 @@ describe('MenuCard', () => {
 
         const { queryByText, getByAltText, getByRole } = render(
             <StaticRouter>
-                <MenuCard items={items} title="starter" />
+                <MenuCard items={items} title="entrees" />
             </StaticRouter>
         )
 
-        expect(queryByText(/starter/i)).toBeInTheDocument()
+        expect(queryByText(/entrees/i)).toBeInTheDocument()
         expect(queryByText(/nameA/i)).toBeInTheDocument()
         expect(queryByText(/50/i)).toBeInTheDocument()
         expect(queryByText(/description/i)).toBeInTheDocument()

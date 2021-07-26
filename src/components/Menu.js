@@ -10,13 +10,13 @@ function Menu() {
 	const {items} = store
 
 	// each variable is an array of items of the same category
-	let starter
+	let entrees
 	let drink 
 	let main 
 	let dessert
 
 	if (items) {
-		starter = items.filter(item => item.category_id === 1)
+		entrees = items.filter(item => item.category_id === 1)
 		drink = items.filter(item => item.category_id === 2)
 		main = items.filter(item => item.category_id === 3)
 		dessert = items.filter(item => item.category_id === 4)
@@ -32,7 +32,7 @@ function Menu() {
 			<div>
 				<h1 className="title">Menu</h1>
 				<h2 className="sub-head">Entrees</h2>
-				<MenuCard items={starter} title={""}/>
+				<MenuCard items={entrees} title={""}/>
 				<h2 className="sub-head">Mains</h2>
 				<MenuCard items={main} title={""}/>
 				<h2 className="sub-head">Desserts</h2>

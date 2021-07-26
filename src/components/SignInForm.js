@@ -65,12 +65,13 @@ function SignInForm() {
                 </div>
                 <div className="mb-4">
                     <fieldset>
-                        <label className="block text-gray-700 text-sm font-normal mb-2" htmlFor="username" >Email</label>
+                        <label className="block text-gray-700 text-sm font-normal mb-2" htmlFor="email" >Email</label>
                         <input value={formState.email} onChange={handleChange} className="shadow 
                             appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             name="email"
                             v-model="form.email"
                             type="email"
+                            id="email"
                             required
                             autoFocus
                             placeholder="Email"/>
@@ -84,10 +85,11 @@ function SignInForm() {
                             type="password"
                             placeholder="Password"
                             name="password"
+                            id="password"
                             required
                             autoComplete="current-password" />
                     </fieldset>
-                    <button className="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Sign In</button>
+                    <button data-cy="submit-button" className="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Sign In</button>
                 </div>
                 </form>
                 <p className="text-center text-gray-500 text-xs">
